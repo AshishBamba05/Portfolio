@@ -11,6 +11,7 @@
         padding: 0;
         background-color: #000;  /* Black background */
         color: #fff;             /* White text */
+        font-family: 'Trebuchet MS', sans-serif;
     }
 
     header {
@@ -52,14 +53,8 @@
     .skill-item {
       display: flex;
       align-items: center;
-      width: 18%; /* 5 per row roughly (100 / 5 = 20% minus gap) */
+      width: 7%; /* 5 per row roughly (100 / 5 = 20% minus gap) */
     }
-
-    .skill-item img {
-      height: 40px;
-      margin-right: 8px;
-    }
-
 
     .skills img {
       height: 40px;
@@ -111,8 +106,23 @@
         line-height: 2;
     }
 
+    #recommendations h2 {
+        margin-bottom: 0;
+    }
 
+    #recList {
+        margin-top: 5px; /* or 0 if you want it tighter */
+    }
 
+    a {
+        color: #66b2ff; /* Softer blue; try #00bfff, #3399ff, or any hex you like */
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        color: #1e90ff; /* Optional: brighter on hover */
+    }
 
 
   </style>
@@ -130,10 +140,10 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <img src="DinnerPic.png" alt="Profile Image" width="440" />
-    <p>Hi, I’m Ashish — an undergraduate Computer Science student @ UC San Diego pursuing a Bachelor of Science in Math + Computer Science. I’m passionate about ML, web dev, and building real-world applications.
+    <img src="HeadPic.png" alt="Profile Image" width="160" />
+    <p>Hello! I’m Ashish, a Math & Computer Science undergraduate student at UC San Diego, who is also pursuing a minor in Cognitive Science with a specialization in Neural Computation & Machine Learning. I have a passion with a strong focus on machine learning and software engineering. I love turning abstract ideas into working code — whether that’s predictive models, interactive web apps, or end-to-end systems. I'm driven by curiosity, execution, and the impact of building things that actually work.
         <nav></nav>
-        Let's connect! Feel free to reach out to me at:
+        ⭐️ Let's connect! Feel free to reach out to me at:
         <nav></nav>
         Email:
         <a href="mailto:ashishvbamba@gmail.com">ashishvbamba@gmail.com</a>
