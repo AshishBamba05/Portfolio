@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peer Project Page</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000;  /* Black background */
+        color: #fff;             /* White text */
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+    }
+
+    #name {
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-right: auto;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .skills img {
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    .project, .recommendation {
+      margin: 10px 0;
+    }
+
+    #homeIcon {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 24px;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      bottom: 50px;
+      right: 10px;
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .project a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #ff8c00;  /* dark orange */
+    }
+
+    #recommendations, 
+    #recommendations .recommendation {
+        margin: 0;
+        padding: 0;
+        line-height: 2;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <div id="name">Ashish's Portfolio</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Project Details</a>
+      <a href="#skills">Skills</a>
+      <a href="#recommendations">Recommendations</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="DinnerPic.png" alt="Profile Image" width="440" />
+    <p>Hi, I’m Ashish — a Computer Science student @ UC San Diego pursuing a Bachelor of Science in Math + Computer Science. I’m passionate about ML, web dev, and building real-world applications.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <p><img src="Python.png" alt="Python" />Python</p>
+      <p><img src="Java.png" alt="Java" />Java</p>
+      <p><img src="C.jpeg" alt="C/C++" />C/C++</p>
+      <p><img src="js-logo.png" alt="JavaScript" />JavaScript</p>
+      <p><img src="react-logo.png" alt="React" />React</p>
+    </div>
+  </section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <a href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank">FinRisk.AI</a> – Built a production-grade XGBoost default prediction tool trained on 250K+ loan profiles (AUC >75%), using SMOTEENN + Streamlit + SQLite to power user-facing predictions and backend logging.
+  </div>
+
+  <div class="project">
+    <a href="https://github.com/AshishBamba05/histbytz-app" target="_blank">HistBytz</a> – Developed React web app visualizing 500+ yrs of U.S. history, featuring JSX-based search filters, CSS animations, and Vite for fast builds.
+  </div>
+
+
+
+<section id="recommendations">
+    <h2>Recommendations</h2>
+    <div id="recList">
+      <div class="recommendation">Excellent UI and strong React fundamentals!</div>
+      <div class="recommendation">Loved the data engineering work.</div>
+      <div class="recommendation">Clean code and good structure.</div>
+    </div>
+    <input type="text" id="newRec" placeholder="Add a new recommendation..." />
+    <button onclick="addRecommendation()">Submit</button>
+  </section>
+
+  <div id="homeIcon">🏠</div>
+  <div class="popup" id="popup">Recommendation submitted!</div>
+
+  <script>
+    function addRecommendation() {
+      const input = document.getElementById("newRec");
+      const rec = input.value.trim();
+      if (rec) {
+        const div = document.createElement("div");
+        div.className = "recommendation";
+        div.textContent = rec;
+        document.getElementById("recList").appendChild(div);
+        input.value = "";
+        showPopup();
+      }
+    }
+
+    function showPopup() {
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => popup.style.display = "none", 2000);
+    }
+  </script>
+</body>
+</html>
