@@ -42,6 +42,25 @@
       padding: 20px;
     }
 
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: start;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      width: 18%; /* 5 per row roughly (100 / 5 = 20% minus gap) */
+    }
+
+    .skill-item img {
+      height: 40px;
+      margin-right: 8px;
+    }
+
+
     .skills img {
       height: 40px;
       vertical-align: middle;
@@ -112,7 +131,11 @@
   <section id="about">
     <h2>About Me</h2>
     <img src="DinnerPic.png" alt="Profile Image" width="440" />
-    <p>Hi, I’m Ashish — a Computer Science student @ UC San Diego pursuing a Bachelor of Science in Math + Computer Science. I’m passionate about ML, web dev, and building real-world applications.</p>
+    <p>Hi, I’m Ashish — a Computer Science student @ UC San Diego pursuing a Bachelor of Science in Math + Computer Science. I’m passionate about ML, web dev, and building real-world applications.
+        <nav></nav>
+        Email:
+        <a href="mailto:ashishvbamba@gmail.com">ashishvbamba@gmail.com</a>
+    </p>
   </section>
 
   <section id="skills">
@@ -121,8 +144,8 @@
       <p><img src="Python.png" alt="Python" />Python</p>
       <p><img src="Java.png" alt="Java" />Java</p>
       <p><img src="C.jpeg" alt="C/C++" />C/C++</p>
-      <p><img src="js-logo.png" alt="JavaScript" />JavaScript</p>
-      <p><img src="react-logo.png" alt="React" />React</p>
+      <p><img src="JS.png" alt="JavaScript" />JavaScript</p>
+      <p><img src="React.png" alt="React" />React</p>
     </div>
   </section>
 
