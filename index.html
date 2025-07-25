@@ -6,12 +6,11 @@
   <title>Ashish V Bamba Portfolio Page</title>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #000;  /* Black background */
-        color: #fff;             /* White text */
-        font-family: 'Trebuchet MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Trebuchet MS', sans-serif;
     }
 
     header {
@@ -39,38 +38,75 @@
       font-style: italic;
     }
 
+    h1, h2 {
+      color: #ff8c00;
+    }
+
+    a {
+      color: #66b2ff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #1e90ff;
+    }
+
     section {
-      padding: 20px;
+      padding: 20px 40px;
     }
 
-    .skills {
+    .section-container {
+      max-width: 1400px;
+      margin: 0 auto 50px auto;
+    }
+
+    .align-with-about {
+      margin-left: 325px; /* match profile image + gap */
+      max-width: 1200px;
+    }
+
+
+    .about-container {
       display: flex;
+      align-items: flex-start;
+      gap: 30px;
       flex-wrap: wrap;
-      gap: 20px;
-      justify-content: start;
     }
 
-    .skill-item {
-      display: flex;
-      align-items: center;
-      width: 7%; /* 5 per row roughly (100 / 5 = 20% minus gap) */
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
     }
 
-    .skills img {
-      height: 40px;
-      vertical-align: middle;
-      margin-right: 29px;
+    .about-text {
+      flex: 1;
+      min-width: 300px;
     }
 
-    #skills p {
-      margin-bottom: 10px;  /* controls space between lines */
-      line-height: 1.5;
-  }
+    .about-text h1 {
+      font-size: 2.8rem;
+      margin-top: 0;
+      color: #fff;
+    }
 
+    .contact-section {
+      margin-top: 20px;
+    }
 
+    .skills-block p, .project, .recommendation {
+      margin-bottom: 10px;
+    }
 
-    .project, .recommendation {
-      margin: 10px 0;
+    .project a {
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
     }
 
     #homeIcon {
@@ -90,81 +126,9 @@
       padding: 10px;
       border-radius: 5px;
     }
-
-    .project a {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-
-    h1, h2, h3, h4, h5, h6 {
-        color: #ff8c00;  /* dark orange */
-    }
-
-    #recommendations, 
-    #recommendations .recommendation {
-        margin: 0;
-        padding: 0;
-        line-height: 2;
-    }
-
-    #recommendations h2 {
-        margin-bottom: 0;
-    }
-
-    #recList {
-        margin-top: 5px; /* or 0 if you want it tighter */
-    }
-
-    a {
-        color: #66b2ff; /* Softer blue; try #00bfff, #3399ff, or any hex you like */
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-        color: #1e90ff; /* Optional: brighter on hover */
-    }
-
-    .contact-section {
-        margin-top: 20px;  /* or try 30px if you want more breathing room */
-    }
-
-.about-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.about-text h1 {
-  font-size: 2.8rem;
-  margin-top: 0;
-  color: #fff;
-}
-
-
-
-
   </style>
 </head>
+
 <body>
   <header>
     <div id="name">Ashish V Bamba Portfolio</div>
@@ -176,63 +140,55 @@
     </nav>
   </header>
 
- <section id="about">
-  <h2>About Me</h2>
-  <div class="about-container">
-    <img src="HeadPic.png" alt="Profile Image" class="profile-pic" />
+  <section id="about" class="section-container">
+    <div class="about-container">
+      <img src="HeadPic.png" alt="Profile Image" class="profile-pic" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <h1>Hi, I'm Ashish! 👋</h1>
+        <p>I’m an undergrad at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science focused on Neural Computation and Machine Learning. I love turning abstract ideas into working code — whether that’s predictive models, interactive web apps, or end-to-end systems. I'm driven by curiosity, execution, and the impact of building things that actually work.</p>
 
-    <div class="about-text">
-      <h1>Hi, I'm Ashish! 👋</h1>
-      <p>I’m an undergrad at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science focused on Neural Computation and Machine Learning. I love turning abstract ideas into working code — whether that’s predictive models, interactive web apps, or end-to-end systems. I'm driven by curiosity, execution, and the impact of building things that actually work.</p>
+        <p>In February 2025, I was selected as 1 of 3 ML developers at CS foreach, an equity-focused tech organization. Leveraging Python, Scikit-Learn, and Pandas, I developed a Stroke Predictor model, trained on 5K+ patient data to illustrate real-word applications of supervised learning concepts. The focus was on building lean, functional tools that made machine learning feel tangible and actionable—especially in contexts that actually matter.</p>
 
-      <p>In February 2025, I was selected as 1 of 3 ML developers at CS foreach, an equity-focused tech organization. Leveraging Python, Scikit-Learn, and Pandas, I developed a Stroke Predictor model, trained on 5K+ patient data to illustrate real-word applications of supervised learning concepts. The focus was on building lean, functional tools that made machine learning feel tangible and actionable—especially in contexts that actually matter.</p>
+        <p>Later on, I joined an ML research group @ CSES E/ACC, a student-run engineering team focused on building tools to support the academic community. Our current focus is on designing an instrument transposition tool powered by PyTorch — a neural network that takes audio input and shifts it across instruments while preserving tone and pitch. It was a blend of music, ML, and problem-solving that showed how deep learning can be used in creative, not just analytical, ways.</p>
 
-      <p>Later on, I joined an ML research group @ CSES E/ACC, a student-run engineering team focused on building tools to support the academic community. Our current focus is on designing an instrument transposition tool powered by PyTorch — a neural network that takes audio input and shifts it across instruments while preserving tone and pitch. It was a blend of music, ML, and problem-solving that showed how deep learning can be used in creative, not just analytical, ways.</p>
+        <p>I’m constantly sharpening my skills by building new full-stack ML projects that challenge me to think more critically about performance, usability, and real-world application. Projects like FinRisk.AI and HistBytz have pushed me to combine backend intelligence with clean, user-facing design — and I’m continuing to explore ways to build smarter, more intuitive systems. Check out the Projects section for more.</p>
 
-      <p>I’m constantly sharpening my skills by building new full-stack ML projects that challenge me to think more critically about performance, usability, and real-world application. Projects like FinRisk.AI and HistBytz have pushed me to combine backend intelligence with clean, user-facing design — and I’m continuing to explore ways to build smarter, more intuitive systems. Check out the Projects section for more.</p>
-
-      <div class="contact-section">
-        ⭐ Let’s connect! Feel free to reach out to me at:<br>
-        Email: <a href="mailto:ashishvbamba@gmail.com">ashishvbamba@gmail.com</a><br>
-        LinkedIn: <a href="https://www.linkedin.com/in/ashishbamba/">ashishbamba</a><br>
-        GitHub: <a href="https://github.com/AshishBamba05">AshishBamba05</a>
+        <div class="contact-section">
+          ⭐ Let’s connect! Feel free to reach out to me at:<br>
+          Email: <a href="mailto:ashishvbamba@gmail.com">ashishvbamba@gmail.com</a><br>
+          LinkedIn: <a href="https://www.linkedin.com/in/ashishbamba/">ashishbamba</a><br>
+          GitHub: <a href="https://github.com/AshishBamba05">AshishBamba05</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <section id="skills" class="align-with-about">
+    <h2>Skills</h2>
+    <div class="skills-block">
+      <p><strong>Programming Languages:</strong> Python, Java, JavaScript, TypeScript, C/C++, PHP, SQL, HTML/CSS, MATLAB</p>
+      <p><strong>Frameworks & Libraries:</strong> NumPy, Pandas, Scikit-Learn, Matplotlib, Seaborn, Bootstrap, PyTorch, Keras, TensorFlow</p>
+      <p><strong>Cloud & DevOps:</strong> Google Cloud Platform (GCP), Docker, Heroku, GitHub Actions</p>
+      <p><strong>Development Tools:</strong> Git, Eclipse, IntelliJ, Sublime, PyCharm, VS Code, Google Colab, Jupyter, Jira</p>
+      <p><strong>Technologies:</strong> MS-SQL Server, MySQL, REST APIs, VM Fusion, Ubuntu, MacOS, Windows</p>
+    </div>
+  </section>
 
-  <section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-block">
-    <p><strong>Programming Languages:</strong> Python, Java, JavaScript, TypeScript, C/C++, PHP, SQL, HTML/CSS, MATLAB</p>
-    <p><strong>Frameworks & Libraries:</strong> NumPy, Pandas, Scikit-Learn, Matplotlib, Seaborn, Bootstrap, PyTorch, Keras, TensorFlow</p>
-    <p><strong>Cloud & DevOps:</strong> Google Cloud Platform (GCP), Docker, Heroku, GitHub Actions</p>
-    <p><strong>Development Tools:</strong> Git, Eclipse, IntelliJ, Sublime, PyCharm, VS Code, Google Colab, Jupyter, Jira</p>
-    <p><strong>Technologies:</strong> MS-SQL Server, MySQL, REST APIs, VM Fusion, Ubuntu, MacOS, Windows</p>
-  </div>
-</section>
+  <section id="projects" class="align-with-about">
+    <h2>Projects</h2>
+    <div class="project">
+      <a href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank">FinRisk.AI</a> – Built a production-grade XGBoost default prediction tool trained on 250K+ loan profiles (AUC >75%), using Streamlit + SQLite to power user-facing predictions and backend logging.
+    </div>
+    <div class="project">
+      <a href="https://github.com/AshishBamba05/histbytz-app" target="_blank">HistBytz</a> – Developed React web app visualizing 500+ yrs of U.S. history, featuring JSX-based search filters, CSS animations, and Vite for fast builds.
+    </div>
+    <div class="project">
+      <a href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank">CS foreach: AI/ML Starter-Kit</a> – AI-Powered Starter Kit For TritonHacks 2025. Trained, tested, and deployed predictive Scikit-Learn models to output Stroke risk, translating complex health data into actionable intelligence early detection systems.
+    </div>
+  </section>
 
-
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <a href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank">FinRisk.AI</a> – Built a production-grade XGBoost default prediction tool trained on 250K+ loan profiles (AUC >75%), using Streamlit + SQLite to power user-facing predictions and backend logging.
-  </div>
-
-  <div class="project">
-    <a href="https://github.com/AshishBamba05/histbytz-app" target="_blank">HistBytz</a> – Developed React web app visualizing 500+ yrs of U.S. history, featuring JSX-based search filters, CSS animations, and Vite for fast builds.
-  </div>
-
-  <div class="project">
-    <a href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank">CS forach: AI/ML Starter-Kit</a> – AI-Powered Starter Kit For TritonHacks 2025. Trained, tested, and deployed predictive Scikit-Learn models to output Stroke risk, translating complex health data into actionable intelligence early detection systems.
-
-  </div>
-
-
-
-<section id="recommendations">
+  <section id="recommendations" class="align-with-about">
     <h2>Recommendations</h2>
     <div id="recList">
       <div class="recommendation">Excellent UI and strong React fundamentals!</div>
