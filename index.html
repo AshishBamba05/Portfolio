@@ -63,15 +63,20 @@
     .align-with-about {
       margin-left: 325px; /* match profile image + gap */
       max-width: 1200px;
+      max-width: 100%;
+      padding: 16px;
+      box-sizing: border-box;
     }
 
 
     .about-container {
       display: flex;
-      align-items: flex-start;
-      gap: 30px;
       flex-wrap: wrap;
-    }
+      gap: 30px;
+      justify-content: center;
+  }
+
+
 
     .profile-pic {
       width: 200px;
@@ -140,6 +145,44 @@
       object-position: 50% 45%; /* horizontal 50%, vertical 20% from top */
       display: block;
     }
+
+    @media (max-width: 768px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .column {
+      width: 100%;
+      margin-bottom: 16px;
+    } 
+
+    .text-block, .image-block {
+      padding: 0 10px;
+    }
+
+    .align-with-about {
+    margin-left: 0;
+    padding: 16px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    padding: 0 10px;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+  }
+
+  }
+
 
 
   </style>
