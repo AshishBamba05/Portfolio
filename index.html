@@ -183,6 +183,97 @@ section { padding: 20px 40px; }
   box-shadow:0 10px 24px rgba(0,0,0,0.45);
 }
 
+/* Projects grid */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+  gap:18px;
+  margin-top:12px;
+}
+
+/* Card base: matte surface + holographic border */
+.project-card{
+  position:relative;
+  background:#0b0c10;
+  color:#e8eaed;
+  border-radius:18px;
+  padding:18px 18px 14px 18px;
+  isolation:isolate;
+  box-shadow:0 8px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+  transition:transform .18s ease, box-shadow .18s ease;
+}
+
+/* Holographic border via masked conic gradient */
+.project-card::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:18px;
+  padding:1px;                     /* border thickness */
+  background:conic-gradient(
+    from 180deg,
+    #ff8a00, #ff4d00, #3b82f6, #10b981, #a855f7, #ef4444, #06b6d4, #94a3b8, #ff8a00
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  opacity:.35; transition:opacity .2s ease;
+  pointer-events:none;
+}
+
+/* Left accent stripe (solid, not gradient) */
+.project-card .accent{
+  position:absolute; left:0; top:14px; bottom:14px; width:6px; border-radius:6px;
+  background:linear-gradient(180deg,#ff8a00,#ff4d00);
+  opacity:.9;
+}
+
+/* Hover effects */
+.project-card:hover{ transform:translateY(-4px); box-shadow:0 14px 32px rgba(0,0,0,.5); }
+.project-card:hover::before{ opacity:.7; }
+
+/* Header */
+.project-card header{
+  display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.project-card h3{
+  margin:0; font-size:1.15rem; letter-spacing:.2px; color:#fff;
+}
+
+/* Tags (tiny pills) */
+.project-card .tags{ display:flex; gap:8px; flex-wrap:wrap; }
+.project-card .tags span{
+  font-size:.72rem; color:#cfd3d8; background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12); padding:4px 8px; border-radius:999px;
+}
+
+/* Body */
+.project-card p{ margin:10px 0 12px 0; line-height:1.35; color:#d9dde3; }
+
+/* Footer button */
+.project-card .btn{
+  display:inline-block; text-decoration:none; color:#0b0c10; font-weight:700;
+  background:#e9eefc; border-radius:10px; padding:8px 12px;
+  box-shadow:0 2px 0 rgba(255,255,255,.25) inset, 0 6px 16px rgba(0,0,0,.25);
+  transition:transform .12s ease, filter .12s ease;
+}
+.project-card .btn:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+
+/* Variant accent colors per card (optional) */
+.projects-grid .project-card:nth-child(2) .accent{
+  background:linear-gradient(180deg,#3b82f6,#1d4ed8);
+}
+.projects-grid .project-card:nth-child(3) .accent{
+  background:linear-gradient(180deg,#10b981,#047857);
+}
+
+/* Mobile comfort */
+@media (max-width:768px){
+  .projects-grid{ grid-template-columns:1fr; gap:14px; }
+  .project-card{ padding:16px; border-radius:16px; }
+  .project-card::before{ border-radius:16px; }
+}
+
+
 /* Mobile: keep them comfy */
 @media (max-width:768px){
   .skills-grid{ grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:10px; }
@@ -312,33 +403,63 @@ section { padding: 20px 40px; }
 
 
   <section id="projects" class="align-with-about">
-    <h2>Projects</h2>
-    <div class="project">
-      <a href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank">FinRisk.AI</a> – Built a production-grade XGBoost default prediction tool trained on 250K+ loan profiles (AUC >75%), using Streamlit + SQLite to power user-facing predictions and backend logging.
-    </div>
-    <div class="project">
-      <a href="https://github.com/AshishBamba05/histbytz-app" target="_blank">HistBytz</a> – Developed React web app visualizing 500+ yrs of U.S. history, featuring JSX-based search filters, CSS animations, and Vite for fast builds.
-    </div>
-    <div class="project">
-      <a href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank">CS foreach: AI/ML Starter-Kit</a> – AI-Powered Starter Kit For TritonHacks 2025. Trained, tested, and deployed predictive Scikit-Learn models to output Stroke risk, translating complex health data into actionable intelligence early detection systems.
-    </div>
-    <p><strong>CSE 15L Lab Projects</strong> – Tooling-focused coursework exploring low-level DevOps concepts:</p>
-    <ul>
-      <li>
-        <a href="https://github.com/AshishBamba05/CSE15L--Lab-1">Lab 1 – Git Basics</a>: Explored Unix command behavior (cd, ls, cat) with file, directory, and empty arguments, documenting results through CLI testing and screenshots.
-      </li>
-      <li>
-        <a href="https://github.com/AshishBamba05/CSE15L--Lab-2">Lab 2 – Remote Access & SSH</a>: Set up SSH keys, connected to remote servers, and executed Git operations via command-line.
-      </li>
-      <li>
-        <a href="https://github.com/AshishBamba05/CSE15L--Lab-3">Lab 3 – Bash Automation</a>: Wrote shell scripts to automate file processing and deploy logs across multiple systems.
-      </li>
-      <li>
-        <a href="https://github.com/AshishBamba05/CSE15L--Lab-7">Lab 7 – ListExamples</a>: Implemented core Java List Functions and ran automated JUnit tests using Bash script.
-      </li>
-    </ul>
+  <h2>Projects</h2>
 
-  </section>
+  <div class="projects-grid">
+    <!-- Card 1 -->
+    <article class="project-card">
+      <span class="accent"></span>
+      <header>
+        <h3>FinRisk.AI</h3>
+        <div class="tags">
+          <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>SQLite</span>
+        </div>
+      </header>
+      <p>
+        Production-grade loan default risk predictor trained on 250K+ profiles (AUC > 75%) with
+        live thresholding and persisted prediction logs.
+      </p>
+      <footer>
+        <a class="btn" href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank" rel="noopener">View Repo</a>
+      </footer>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="project-card">
+      <span class="accent"></span>
+      <header>
+        <h3>HistBytz</h3>
+        <div class="tags">
+          <span>React</span><span>Vite</span><span>CSS Animations</span>
+        </div>
+      </header>
+      <p>
+        Interactive timeline of 500+ years of U.S. history with fast client-side search and animated event reveals.
+      </p>
+      <footer>
+        <a class="btn" href="https://github.com/AshishBamba05/histbytz-app" target="_blank" rel="noopener">View Repo</a>
+      </footer>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="project-card">
+      <span class="accent"></span>
+      <header>
+        <h3>AI/ML Starter-Kit</h3>
+        <div class="tags">
+          <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Healthcare</span>
+        </div>
+      </header>
+      <p>
+        Public kit for TritonHacks 2025: stroke-risk classification with clear notebooks on data handling and evaluation.
+      </p>
+      <footer>
+        <a class="btn" href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank" rel="noopener">View Repo</a>
+      </footer>
+    </article>
+  </div>
+</section>
+
 
   <section id="recommendations" class="align-with-about">
     <h2>Recommendations</h2>
