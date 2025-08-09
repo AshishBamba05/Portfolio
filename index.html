@@ -5,189 +5,218 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ashish V Bamba Portfolio Page</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #000;
-      color: #fff;
-      font-family: 'Trebuchet MS', sans-serif;
-    }
+    /* ===== Base ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Trebuchet MS', sans-serif;
+}
 
-    header {
-      display: flex;
-      align-items: center;
-      padding: 10px;
-      background-color: #333;
-      color: #fff;
-    }
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: #333;
+  color: #fff;
+}
 
-    #name {
-      font-weight: bold;
-      font-size: 1.5em;
-      margin-right: auto;
-    }
+#name { font-weight: 700; font-size: 1.5em; margin-right: auto; }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-    }
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+}
+nav a:hover { text-decoration: underline; font-style: italic; }
 
-    nav a:hover {
-      text-decoration: underline;
-      font-style: italic;
-    }
+h1, h2 { color: #ff8c00; }
 
-    h1, h2 {
-      color: #ff8c00;
-    }
+a { color: #66b2ff; }
+a:hover { text-decoration: underline; color: #1e90ff; }
 
-    a {
-      color: #66b2ff;
-    }
+section { padding: 20px 40px; }
+.section-container { max-width: 1400px; margin: 0 auto 50px; }
 
-    a:hover {
-      text-decoration: underline;
-      color: #1e90ff;
-    }
+/* Keeps Skills/Projects/Recommendations aligned with About on desktop */
+.align-with-about {
+  margin-left: 235px;
+  max-width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+}
 
-    section {
-      padding: 20px 40px;
-    }
+/* ===== About ===== */
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+.profile-pic {
+  width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+}
+.about-text { flex: 1; min-width: 300px; }
+.about-text h1 { font-size: 2.8rem; margin-top: 0; color: #fff; }
 
-    .section-container {
-      max-width: 1400px;
-      margin: 0 auto 50px auto;
-    }
+.skills-block p, .project, .recommendation { margin-bottom: 10px; }
+.project a { color: #007bff; font-weight: 700; }
 
-    .align-with-about {
-      margin-left: 325px; /* match profile image + gap */
-      max-width: 1200px;
-      max-width: 100%;
-      padding: 16px;
-      box-sizing: border-box;
-    }
+/* ===== Misc UI ===== */
+#homeIcon { position: fixed; bottom: 10px; right: 10px; font-size: 24px; }
+.popup {
+  display: none; position: fixed; bottom: 50px; right: 10px;
+  background: #28a745; color: #fff; padding: 10px; border-radius: 5px;
+}
+
+/* ===== Banner ===== */
+.banner-container { width: 100%; height: 270px; overflow: hidden; }
+.banner-image { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
+
+/* ===== Coursework Cards ===== */
+/* Title stays; only cards shift left on desktop */
+.coursework-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 1rem;
+  max-width: 1100px;
+  margin-left: 60px; /* adjust to taste */
+}
+.course-card{
+  background: linear-gradient(135deg,#1f2937,#111827);
+  border: 1px solid rgba(255,255,255,.08);
+  color: #fff;
+  padding: 16px 18px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  font-weight: 600;
+  letter-spacing: .2px;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.course-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,0,0,.5);
+  border-color: rgba(255,255,255,.18);
+}
+
+.course-section { margin-left: 195px; }
+
+/* Distinct gradients per card */
+.course-card:nth-child(1){ background:linear-gradient(135deg,#ff8a00,#ff4d00);}
+.course-card:nth-child(2){ background:linear-gradient(135deg,#3b82f6,#1d4ed8);}
+.course-card:nth-child(3){ background:linear-gradient(135deg,#10b981,#047857);}
+.course-card:nth-child(4){ background:linear-gradient(135deg,#a855f7,#7c3aed);}
+.course-card:nth-child(5){ background:linear-gradient(135deg,#f59e0b,#b45309);}
+.course-card:nth-child(6){ background:linear-gradient(135deg,#ef4444,#b91c1c);}
+.course-card:nth-child(7){ background:linear-gradient(135deg,#06b6d4,#0e7490);}
+.course-card:nth-child(8){ background:linear-gradient(135deg,#94a3b8,#475569);}
+
+/* Indent Skills to match other sections */
+#skills.align-with-about .skills-inner {
+  padding-left: 0px;   /* tweak: 300–380 to taste */
+}
+
+/* Programming Languages: glassy chips, compact grid */
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;              /* allow wrapping */
+  gap: 12px;
+
+  list-style: none;
+  margin: 12px 0 28px;
+  margin-left: -90px;
+
+  padding: 0;
+  justify-content: flex-start;  /* keep items left-aligned */
+}
+
+.skill-card{
+  position:relative;
+  margin-left: 120px;
+
+  padding:12px 30px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.06);
+
+  border:1px solid rgba(255,255,255,0.14);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+
+  color:#eaeaea;
+  font-weight:650;
+  letter-spacing:.2px;
+   flex: 0 1 140px;               /* min width 140px, can grow */
+  max-width: 200px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 6px 18px rgba(0,0,0,0.35);
+  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+/* Thin accent bar to differentiate each chip */
+.skill-card::before{
+  content:"";
+  display:block;
+  height:3px;
+  border-radius:3px;
+  margin-bottom:8px;
+  background:linear-gradient(90deg,#ff8a00,#ff4d00);
+  opacity:.9;
+}
+
+/* Rotate accent colors */
+.skill-card:nth-child(2)::before{background:linear-gradient(90deg,#3b82f6,#1d4ed8);}
+.skill-card:nth-child(3)::before{background:linear-gradient(90deg,#10b981,#047857);}
+.skill-card:nth-child(4)::before{background:linear-gradient(90deg,#a855f7,#7c3aed);}
+.skill-card:nth-child(5)::before{background:linear-gradient(90deg,#3b82f6,#1d4ed8);}
+.skill-card:nth-child(6)::before{background:linear-gradient(90deg,#ef4444,#b91c1c);}
+.skill-card:nth-child(7)::before{background:linear-gradient(90deg,#06b6d4,#0e7490);}
+.skill-card:nth-child(8)::before{background:linear-gradient(90deg,#94a3b8,#475569);}
+.skill-card:nth-child(9)::before{background:linear-gradient(90deg,#22c55e,#15803d);}
+
+.skill-card:hover{
+  transform:translateY(-3px);
+  border-color:rgba(255,255,255,0.25);
+  box-shadow:0 10px 24px rgba(0,0,0,0.45);
+}
+
+/* Mobile: keep them comfy */
+@media (max-width:768px){
+  .skills-grid{ grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:10px; }
+  .skill-card{ padding:10px 12px; border-radius:12px; }
+}
 
 
-    .about-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
+/* ===== Mobile tweaks ===== */
+@media (max-width: 768px) {
+  .align-with-about { margin-left: 0; padding: 16px; }
+
+  .about-container { flex-direction: column; align-items: center; text-align: center; }
+  .about-text { padding: 0 10px; }
+  .profile-pic { width: 150px; height: 150px; }
+
+  .coursework-container { margin-left: 0; padding: 16px; gap: 12px; }
+  .course-card { padding: 14px 16px; border-radius: 12px; }
+
+  .coursework-container {
+    margin-left: 0 !important;     /* kill the desktop offset */
+    max-width: none;
+    width: 100%;
+    padding: 0 16px;
+    gap: 12px;
+    grid-template-columns: 1fr;     /* avoid 280px min squeezing */
   }
+  .course-section { padding-left: -200px !important; }
 
-
-
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .about-text {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .about-text h1 {
-      font-size: 2.8rem;
-      margin-top: 0;
-      color: #fff;
-    }
-
-    .contact-section {
-      margin-top: 20px;
-    }
-
-    .skills-block p, .Coursework-block p, .project,.recommendation {
-      margin-bottom: 10px;
-    }
-
-    .project a {
-      color: #007bff;
-      font-weight: bold;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    #homeIcon {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      font-size: 24px;
-    }
-
-    .popup {
-      display: none;
-      position: fixed;
-      bottom: 50px;
-      right: 10px;
-      background-color: #28a745;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .banner-container {
-        width: 100%;
-        height: 270px; /* Adjust as needed */
-        overflow: hidden;
-    }
-
-    .banner-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 45%; /* horizontal 50%, vertical 20% from top */
-      display: block;
-    }
-
-    @media (max-width: 768px) {
-    .flex-container {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .column {
-      width: 100%;
-      margin-bottom: 16px;
-    } 
-
-    .text-block, .image-block {
-      padding: 0 10px;
-    }
-
-    .align-with-about {
-    margin-left: 0;
-    padding: 16px;
-  }
-
-  .about-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text {
-    padding: 0 10px;
-  }
-
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-  }
-
-  }
-
+  #skills.align-with-about .skills-inner { padding-left: 0; }
+}
 
 
   </style>
 </head>
-
 <body>
   <header>
     <div id="name">Ashish V Bamba Portfolio</div>
@@ -244,32 +273,43 @@
     </div>
   </section>
 
-<section id="course" class="align-with-about">
-  <h2 style="margin-bottom: 10px;">Relevant Coursework</h2>
-  <ul style="line-height: 2; padding-left: 0; margin-left: 0; list-style-position: inside;">
-    <li>Accelerated Programming & Object-Oriented Design (CSE 11)</li>
-    <li>Data Structures & Object-Oriented Design (CSE 12)</li>
-    <li>Computer Organization & Systems Programming (CSE 30)</li>
-    <li>Software Tools & Techniques Lab (CSE 15L) (See Labs Below!)</li>
-    <li>Mathematical Reasoning (MATH 109)</li>
-    <li>Discrete Math & Graph Theory (MATH 154)</li>
-    <li>Advanced Data Structures (CSE 100)</li>
-    <li>Theory Of Computation (CSE 105)</li>
-  </ul>
+<section id="course" class="course-section">
+  <h2>Relevant Coursework</h2>
+  <div class="coursework-container">
+    <div class="course-card">Accelerated Programming & Object-Oriented Design (CSE 11)</div>
+    <div class="course-card">Data Structures & Object-Oriented Design (CSE 12)</div>
+    <div class="course-card">Computer Organization & Systems Programming (CSE 30)</div>
+    <div class="course-card">Software Tools & Techniques Lab (CSE 15L)</div>
+    <div class="course-card">Mathematical Reasoning (MATH 109)</div>
+    <div class="course-card">Discrete Math & Graph Theory (MATH 154)</div>
+    <div class="course-card">Advanced Data Structures (CSE 100)</div>
+    <div class="course-card">Theory Of Computation (CSE 105)</div>
+  </div>
 </section>
 
 
-
-  <section id="skills" class="align-with-about">
+<section id="skills" class="align-with-about">
+  <div class="skills-inner">
     <h2>Skills</h2>
-    <div class="skills-block">
-      <p><strong>Programming Languages:</strong> Python, Java, JavaScript, TypeScript, C/C++, PHP, SQL, HTML/CSS, MATLAB</p>
-      <p><strong>Frameworks & Libraries:</strong> NumPy, Pandas, Scikit-Learn, Matplotlib, Seaborn, Bootstrap, PyTorch, Keras, TensorFlow</p>
-      <p><strong>Cloud & DevOps:</strong> Google Cloud Platform (GCP), Docker, Heroku, GitHub Actions</p>
-      <p><strong>Development Tools:</strong> Git, Eclipse, IntelliJ, Sublime, PyCharm, VS Code, Google Colab, Jupyter, Jira</p>
-      <p><strong>Technologies:</strong> MS-SQL Server, MySQL, REST APIs, VM Fusion, Ubuntu, MacOS, Windows</p>
-    </div>
-  </section>
+    <h3>Programming Languages</h3>
+    <ul class="skills-grid">
+      <!-- chips -->
+       <li class="skill-card">Python</li>
+  <li class="skill-card">Java</li>
+  <li class="skill-card">JavaScript</li>
+  <li class="skill-card">TypeScript</li>
+  <li class="skill-card">C/C++</li>
+  <li class="skill-card">PHP</li>
+  <li class="skill-card">SQL</li>
+  <div class="break"></div>
+
+  <li class="skill-card">HTML/CSS</li>
+  <li class="skill-card">MATLAB</li>
+    </ul>
+  </div>
+</section>
+
+
 
   <section id="projects" class="align-with-about">
     <h2>Projects</h2>
