@@ -6,304 +6,454 @@
   <title>Ashish V Bamba Portfolio Page</title>
   <style>
     /* ===== Base ===== */
-body {
-  margin: 0;
-  padding: 0;
-  background: #000;
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px 16px;
+      background: #333;
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    #name { font-weight: 700; font-size: 1.5em; margin-right: auto; }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+    nav a:hover { text-decoration: underline; font-style: italic; }
+
+    h1, h2 { color: #ff8c00; }
+
+    a { color: #66b2ff; }
+    a:hover { text-decoration: underline; color: #1e90ff; }
+
+    section { padding: 20px 40px; }
+    .section-container { max-width: 1400px; margin: 0 auto 50px; }
+
+    /* Keeps Skills/Projects/Recommendations aligned with About on desktop */
+    .align-with-about {
+      margin-left: 235px;
+      max-width: 100%;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+
+    /* ===== About ===== */
+    .about-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .profile-pic {
+      width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+    }
+.about-text {
+  flex: 1;
+  min-width: 320px;
+  margin-bottom: 0;         /* remove the negative spacing */
+  padding-left: 20px;       /* optional: adds breathing room if you want it offset */
+  
+}
+
+.about-text h1 {
+  font-size: 2.4rem;
+  margin: 0 0 .5rem 0;      /* give a little more spacing under name */
   color: #fff;
-  font-family: 'Trebuchet MS', sans-serif;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  padding: 10px 16px;
-  background: #333;
-  color: #fff;
+.about-text h2 {
+  margin: 0 0 20px 0;       /* consistent margins */
 }
 
-#name { font-weight: 700; font-size: 1.5em; margin-right: auto; }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-}
-nav a:hover { text-decoration: underline; font-style: italic; }
+    /* === Terminal About === */
+    .terminal-window {
+      background: #1e1e1e;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+      overflow: hidden;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      color: #c5f7e7;
+      position: relative;
+      margin-top: 20px;
+    }
+    .terminal-header {
+      display: flex;
+      gap: 8px;
+      padding: 6px 12px;
+      background: #2c2c2c;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .terminal-header .dot {
+      width: 12px; height: 12px; border-radius: 50%; display: inline-block;
+    }
+    .dot.red { background: #ff5f56; }
+    .dot.yellow { background: #ffbd2e; }
+    .dot.green { background: #27c93f; }
 
-h1, h2 { color: #ff8c00; }
+    .terminal-body {
+      padding: 16px;
+      min-height: 260px;
+      line-height: 1.4;
+      font-size: 0.98rem;
+      position: relative;
+    }
+    #terminal-text {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .skip-typing {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      background: #0ea5e9;
+      color: #001018;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 0 rgba(255,255,255,.18) inset, 0 6px 16px rgba(0,0,0,.25);
+    }
+    .skip-typing:hover { filter: brightness(1.05); }
 
-a { color: #66b2ff; }
-a:hover { text-decoration: underline; color: #1e90ff; }
+    .contact-section { margin-top: 12px; }
 
-section { padding: 20px 40px; }
-.section-container { max-width: 1400px; margin: 0 auto 50px; }
+    /* ===== Misc UI ===== */
+    #homeIcon { position: fixed; bottom: 10px; right: 10px; font-size: 24px; }
+    .popup {
+      display: none; position: fixed; bottom: 50px; right: 10px;
+      background: #28a745; color: #fff; padding: 10px; border-radius: 5px;
+      z-index: 30;
+    }
 
-/* Keeps Skills/Projects/Recommendations aligned with About on desktop */
-.align-with-about {
-  margin-left: 235px;
-  max-width: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-}
+    /* ===== Banner ===== */
+    .banner-container { width: 100%; height: 270px; overflow: hidden; }
+    .banner-image { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
 
-/* ===== About ===== */
-.about-container {
+    /* ===== Coursework Cards ===== */
+    .course-section { margin-left: 195px; }
+    .coursework-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 1rem;
+      max-width: 1100px;
+      margin-left: 60px;
+    }
+    .course-card{
+      background: linear-gradient(135deg,#1f2937,#111827);
+      border: 1px solid rgba(255,255,255,.08);
+      color: #fff;
+      padding: 16px 18px;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      font-weight: 600;
+      letter-spacing: .2px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .course-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.5);
+      border-color: rgba(255,255,255,.18);
+    }
+    /* Distinct gradients per card */
+    .course-card:nth-child(1){ background:linear-gradient(135deg,#ff8a00,#ff4d00);}
+    .course-card:nth-child(2){ background:linear-gradient(135deg,#3b82f6,#1d4ed8);}
+    .course-card:nth-child(3){ background:linear-gradient(135deg,#10b981,#047857);}
+    .course-card:nth-child(4){ background:linear-gradient(135deg,#a855f7,#7c3aed);}
+    .course-card:nth-child(5){ background:linear-gradient(135deg,#f59e0b,#b45309);}
+    .course-card:nth-child(6){ background:linear-gradient(135deg,#ef4444,#b91c1c);}
+    .course-card:nth-child(7){ background:linear-gradient(135deg,#06b6d4,#0e7490);}
+    .course-card:nth-child(8){ background:linear-gradient(135deg,#94a3b8,#475569);}
+
+    /* ===== Skills ===== */
+    #skills.align-with-about .skills-inner { padding-left: 0px; }
+
+    .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-.profile-pic {
-  width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
-}
-.about-text { flex: 1; min-width: 300px; }
-.about-text h1 { font-size: 2.8rem; margin-top: 0; color: #fff; }
-
-.skills-block p, .project, .recommendation { margin-bottom: 10px; }
-.project a { color: #007bff; font-weight: 700; }
-
-/* ===== Misc UI ===== */
-#homeIcon { position: fixed; bottom: 10px; right: 10px; font-size: 24px; }
-.popup {
-  display: none; position: fixed; bottom: 50px; right: 10px;
-  background: #28a745; color: #fff; padding: 10px; border-radius: 5px;
-}
-
-/* ===== Banner ===== */
-.banner-container { width: 100%; height: 270px; overflow: hidden; }
-.banner-image { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; display: block; }
-
-/* ===== Coursework Cards ===== */
-/* Title stays; only cards shift left on desktop */
-.coursework-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 1rem;
-  max-width: 1100px;
-  margin-left: 60px; /* adjust to taste */
-}
-.course-card{
-  background: linear-gradient(135deg,#1f2937,#111827);
-  border: 1px solid rgba(255,255,255,.08);
-  color: #fff;
-  padding: 16px 18px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  font-weight: 600;
-  letter-spacing: .2px;
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.course-card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 14px 32px rgba(0,0,0,.5);
-  border-color: rgba(255,255,255,.18);
-}
-
-.course-section { margin-left: 195px; }
-
-/* Distinct gradients per card */
-.course-card:nth-child(1){ background:linear-gradient(135deg,#ff8a00,#ff4d00);}
-.course-card:nth-child(2){ background:linear-gradient(135deg,#3b82f6,#1d4ed8);}
-.course-card:nth-child(3){ background:linear-gradient(135deg,#10b981,#047857);}
-.course-card:nth-child(4){ background:linear-gradient(135deg,#a855f7,#7c3aed);}
-.course-card:nth-child(5){ background:linear-gradient(135deg,#f59e0b,#b45309);}
-.course-card:nth-child(6){ background:linear-gradient(135deg,#ef4444,#b91c1c);}
-.course-card:nth-child(7){ background:linear-gradient(135deg,#06b6d4,#0e7490);}
-.course-card:nth-child(8){ background:linear-gradient(135deg,#94a3b8,#475569);}
-
-/* Indent Skills to match other sections */
-#skills.align-with-about .skills-inner {
-  padding-left: 0px;   /* tweak: 300–380 to taste */
-}
-
-/* Programming Languages: glassy chips, compact grid */
-.skills-grid {
-  display: flex;
-  flex-wrap: wrap;              /* allow wrapping */
   gap: 12px;
-
   list-style: none;
   margin: 12px 0 28px;
-  margin-left: -90px;
-
+  margin-left: -90px;   /* keep this for desktop */
   padding: 0;
-  justify-content: flex-start;  /* keep items left-aligned */
+  justify-content: flex-start;
 }
 
-.skill-card{
-  position:relative;
-  margin-left: 120px;
-
-  padding:12px 30px;
-  border-radius:14px;
-  background:rgba(255,255,255,0.06);
-
-  border:1px solid rgba(255,255,255,0.14);
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-
-  color:#eaeaea;
-  font-weight:650;
-  letter-spacing:.2px;
-   flex: 0 1 140px;               /* min width 140px, can grow */
+.skill-card {
+  position: relative;
+  margin-left: 120px;   /* keep this for desktop */
+  padding: 12px 30px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #eaeaea;
+  font-weight: 650;
+  letter-spacing: .2px;
+  flex: 0 1 140px;
   max-width: 200px;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.06),
-    0 6px 18px rgba(0,0,0,0.35);
-  transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-}
-
-/* Thin accent bar to differentiate each chip */
-.skill-card::before{
-  content:"";
-  display:block;
-  height:3px;
-  border-radius:3px;
-  margin-bottom:8px;
-  background:linear-gradient(90deg,#ff8a00,#ff4d00);
-  opacity:.9;
-}
-
-/* Rotate accent colors */
-.skill-card:nth-child(2)::before{background:linear-gradient(90deg,#3b82f6,#1d4ed8);}
-.skill-card:nth-child(3)::before{background:linear-gradient(90deg,#10b981,#047857);}
-.skill-card:nth-child(4)::before{background:linear-gradient(90deg,#a855f7,#7c3aed);}
-.skill-card:nth-child(5)::before{background:linear-gradient(90deg,#3b82f6,#1d4ed8);}
-.skill-card:nth-child(6)::before{background:linear-gradient(90deg,#ef4444,#b91c1c);}
-.skill-card:nth-child(7)::before{background:linear-gradient(90deg,#06b6d4,#0e7490);}
-.skill-card:nth-child(8)::before{background:linear-gradient(90deg,#94a3b8,#475569);}
-.skill-card:nth-child(9)::before{background:linear-gradient(90deg,#22c55e,#15803d);}
-
-.skill-card:hover{
-  transform:translateY(-3px);
-  border-color:rgba(255,255,255,0.25);
-  box-shadow:0 10px 24px rgba(0,0,0,0.45);
-}
-
-/* Projects grid */
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
-  gap:18px;
-  margin-top:12px;
-}
-
-/* Card base: matte surface + holographic border */
-.project-card{
-  position:relative;
-  background:#0b0c10;
-  color:#e8eaed;
-  border-radius:18px;
-  padding:18px 18px 14px 18px;
-  isolation:isolate;
-  box-shadow:0 8px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-
-/* Holographic border via masked conic gradient */
-.project-card::before{
-  content:"";
-  position:absolute; inset:0;
-  border-radius:18px;
-  padding:1px;                     /* border thickness */
-  background:conic-gradient(
-    from 180deg,
-    #ff8a00, #ff4d00, #3b82f6, #10b981, #a855f7, #ef4444, #06b6d4, #94a3b8, #ff8a00
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor; mask-composite:exclude;
-  opacity:.35; transition:opacity .2s ease;
-  pointer-events:none;
-}
-
-/* Left accent stripe (solid, not gradient) */
-.project-card .accent{
-  position:absolute; left:0; top:14px; bottom:14px; width:6px; border-radius:6px;
-  background:linear-gradient(180deg,#ff8a00,#ff4d00);
-  opacity:.9;
-}
-
-/* Hover effects */
-.project-card:hover{ transform:translateY(-4px); box-shadow:0 14px 32px rgba(0,0,0,.5); }
-.project-card:hover::before{ opacity:.7; }
-
-/* Header */
-.project-card header{
-  display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
-}
-.project-card h3{
-  margin:0; font-size:1.15rem; letter-spacing:.2px; color:#fff;
-}
-
-/* Tags (tiny pills) */
-.project-card .tags{ display:flex; gap:8px; flex-wrap:wrap; }
-.project-card .tags span{
-  font-size:.72rem; color:#cfd3d8; background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12); padding:4px 8px; border-radius:999px;
-}
-
-/* Body */
-.project-card p{ margin:10px 0 12px 0; line-height:1.35; color:#d9dde3; }
-
-/* Footer button */
-.project-card .btn{
-  display:inline-block; text-decoration:none; color:#0b0c10; font-weight:700;
-  background:#e9eefc; border-radius:10px; padding:8px 12px;
-  box-shadow:0 2px 0 rgba(255,255,255,.25) inset, 0 6px 16px rgba(0,0,0,.25);
-  transition:transform .12s ease, filter .12s ease;
-}
-.project-card .btn:hover{ transform:translateY(-1px); filter:brightness(1.05); }
-
-/* Variant accent colors per card (optional) */
-.projects-grid .project-card:nth-child(2) .accent{
-  background:linear-gradient(180deg,#3b82f6,#1d4ed8);
-}
-.projects-grid .project-card:nth-child(3) .accent{
-  background:linear-gradient(180deg,#10b981,#047857);
-}
-
-/* Mobile comfort */
-@media (max-width:768px){
-  .projects-grid{ grid-template-columns:1fr; gap:14px; }
-  .project-card{ padding:16px; border-radius:16px; }
-  .project-card::before{ border-radius:16px; }
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 6px 18px rgba(0,0,0,0.35);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
 
-/* Mobile: keep them comfy */
-@media (max-width:768px){
-  .skills-grid{ grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); gap:10px; }
-  .skill-card{ padding:10px 12px; border-radius:12px; }
-}
+    .skill-card::before{
+      content:"";
+      display:block;
+      height:3px;
+      border-radius:3px;
+      margin-bottom:8px;
+      background:linear-gradient(90deg,#ff8a00,#ff4d00);
+      opacity:.9;
+    }
+    .skill-card:nth-child(2)::before{background:linear-gradient(90deg,#3b82f6,#1d4ed8);}
+    .skill-card:nth-child(3)::before{background:linear-gradient(90deg,#10b981,#047857);}
+    .skill-card:nth-child(4)::before{background:linear-gradient(90deg,#a855f7,#7c3aed);}
+    .skill-card:nth-child(5)::before{background:linear-gradient(90deg,#3b82f6,#1d4ed8);}
+    .skill-card:nth-child(6)::before{background:linear-gradient(90deg,#ef4444,#b91c1c);}
+    .skill-card:nth-child(7)::before{background:linear-gradient(90deg,#06b6d4,#0e7490);}
+    .skill-card:nth-child(8)::before{background:linear-gradient(90deg,#94a3b8,#475569);}
+    .skill-card:nth-child(9)::before{background:linear-gradient(90deg,#22c55e,#15803d);}
 
+    .skill-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(255,255,255,0.25);
+      box-shadow:0 10px 24px rgba(0,0,0,0.45);
+    }
 
-/* ===== Mobile tweaks ===== */
-@media (max-width: 768px) {
-  .align-with-about { margin-left: 0; padding: 16px; }
+    /* ===== Projects grid ===== */
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+      gap:18px;
+      margin-top:12px;
+    }
 
-  .about-container { flex-direction: column; align-items: center; text-align: center; }
-  .about-text { padding: 0 10px; }
-  .profile-pic { width: 150px; height: 150px; }
+    .project-card{
+      position:relative;
+      background:#0b0c10;
+      color:#e8eaed;
+      border-radius:18px;
+      padding:18px 18px 14px 18px;
+      isolation:isolate;
+      box-shadow:0 8px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
 
-  .coursework-container { margin-left: 0; padding: 16px; gap: 12px; }
-  .course-card { padding: 14px 16px; border-radius: 12px; }
+    /* Holographic border */
+    .project-card::before{
+      content:"";
+      position:absolute; inset:0;
+      border-radius:18px;
+      padding:1px;
+      background:conic-gradient(
+        from 180deg,
+        #ff8a00, #ff4d00, #3b82f6, #10b981, #a855f7, #ef4444, #06b6d4, #94a3b8, #ff8a00
+      );
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor; mask-composite:exclude;
+      opacity:.35; transition:opacity .2s ease;
+      pointer-events:none;
+    }
 
-  .coursework-container {
-    margin-left: 0 !important;     /* kill the desktop offset */
-    max-width: none;
-    width: 100%;
-    padding: 0 16px;
-    gap: 12px;
-    grid-template-columns: 1fr;     /* avoid 280px min squeezing */
+    /* Left accent stripe */
+    .project-card .accent{
+      position:absolute; left:0; top:14px; bottom:14px; width:6px; border-radius:6px;
+      background:linear-gradient(180deg,#ff8a00,#ff4d00);
+      opacity:.9;
+    }
+    /* Variant accent colors per card */
+    .projects-grid .project-card:nth-child(2) .accent{
+      background:linear-gradient(180deg,#3b82f6,#1d4ed8);
+    }
+    /* Make #3 purple per your ask */
+    .projects-grid .project-card:nth-child(3) .accent{
+      background: linear-gradient(180deg, #7e22ce, #4c1d95);
+    }
+    .projects-grid .project-card:nth-child(4) .accent{
+      background: linear-gradient(180deg, #10b981, #047857);
+    }
+
+    /* Header */
+    .project-card header{
+      display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
+    }
+    .project-card h3{
+      margin:0; font-size:1.15rem; letter-spacing:.2px; color:#fff;
+    }
+
+    /* Tags */
+    .project-card .tags{ display:flex; gap:8px; flex-wrap:wrap; }
+    .project-card .tags span{
+      font-size:.72rem; color:#cfd3d8; background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.12); padding:4px 8px; border-radius:999px;
+    }
+
+    .project-card p{ margin:10px 0 12px 0; line-height:1.35; color:#d9dde3; }
+
+    .project-card .btn{
+      display:inline-block; text-decoration:none; color:#0b0c10; font-weight:700;
+      background:#e9eefc; border-radius:10px; padding:8px 12px;
+      box-shadow:0 2px 0 rgba(255,255,255,.25) inset, 0 6px 16px rgba(0,0,0,.25);
+      transition:transform .12s ease, filter .12s ease;
+    }
+    .project-card .btn:hover{ transform:translateY(-1px); filter:brightness(1.05); }
+
+    /* Hover effects */
+    .project-card:hover{ transform:translateY(-4px); box-shadow:0 14px 32px rgba(0,0,0,.5); }
+    .project-card:hover::before{ opacity:.7; }
+
+    /* ===== Mobile ===== */
+    @media (max-width: 768px) {
+      .align-with-about { margin-left: 0; padding: 16px; }
+      .about-container { flex-direction: column; align-items: center; text-align: center; }
+      .about-text { padding: 0 10px; }
+      .profile-pic { width: 150px; height: 150px; }
+
+      .course-section { margin-left: 0; }
+      .coursework-container {
+        margin-left: 0 !important;
+        max-width: none;
+        width: 100%;
+        padding: 0 16px;
+        gap: 12px;
+        grid-template-columns: 1fr;
+      }
+      .course-card { padding: 14px 16px; border-radius: 12px; }
+
+      .projects-grid{ grid-template-columns:1fr; gap:14px; }
+      .project-card{ padding:16px; border-radius:16px; }
+      .project-card::before{ border-radius:16px; }
+
+      .skills-grid{
+    grid-template-columns: 1fr;  /* single column on phones */
+    gap: 10px;
   }
-  .course-section { padding-left: -200px !important; }
+  .skill-card{
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+    }
 
-  #skills.align-with-about .skills-inner { padding-left: 0; }
+    
+
+.terminal-intro {
+  display: block;
+  font-size: 1.6rem;     /* bigger font */
+  font-weight: 700;      /* bold */
+  color: #00ff95;        /* neon green, tweak as needed */
+  text-align: center;    /* center it */
+  margin: 12px 0 20px 0; /* spacing */
 }
+
+.contact-links {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact-links a {
+  color: #66b2ff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+  color: #1e90ff;
+  text-decoration: underline;
+}
+
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#restart-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #3b82f6;   /* Tailwind blue */
+  color: #3b82f6;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#restart-btn:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* Button bar positioning */
+.button-bar {
+  position: absolute;
+  right: 12px;
+  bottom: -12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;   /* align both buttons to the same bottom edge */
+}
+
+/* Unified terminal button style (applies to both) */
+.tbtn{
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  padding: 8px 16px;         /* same vertical + horizontal padding */
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 2;          /* keeps text height consistent */
+  cursor: pointer;
+  transition: all .2s ease;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
+  display: inline-flex;      /* normalize alignment */
+  align-items: center;       /* center text vertically */
+  justify-content: center;
+  min-height: 45px;          /* force equal vertical size */
+}
+.tbtn:hover{
+  background: #3b82f6;
+  color: #fff;
+}
+
+#skipBtn {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  height: 44px;           /* match the Restart button height */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Optional: small screen tweak so buttons don't crowd */
+@media (max-width: 480px){
+  .button-bar{ gap: 6px; right: 10px; bottom: 10px; }
+  .tbtn{ padding: 6px 10px; }
+}
+
 
 
   </style>
@@ -320,9 +470,9 @@ section { padding: 20px 40px; }
     </nav>
   </header>
 
-    <div class="banner-container">
+  <div class="banner-container">
     <img src="beach.png" alt="Banner Image" class="banner-image" />
-    </div>
+  </div>
 
   <section id="about" class="section-container">
     <div class="about-container">
@@ -330,136 +480,390 @@ section { padding: 20px 40px; }
       <div class="about-text">
         <h2>About Me</h2>
         <h1>Hi, I'm Ashish Bamba! 👋</h1>
-        <p>I’m an undergrad junior at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning).
-          I love turning abstract ideas into working code — whether that’s predictive models, interactive web apps, or end-to-end systems. 
-          I'm driven by curiosity, execution, and the impact of building things that actually work.</p>
-
-        <p>Back in my high school years, I was selected to participate in a competitive summer program at Johns Hopkins University, where I deepened my understanding of core Java fundamentals. 
-          In retrospect, this program was a pivotal step in my journey into the world of software development. 
-          Fast forward a couple years, I began my college undergrad education of Computer Science at UC San Diego. 
-          Through leveraging connections, undergoing a rigorous set of courses, and picking up new programming skills over the years, I've been able to acquire a multitude of experiences that have shaped me into a versatile, disciplined programmer. 
-          Here is a quick rundown of my journey: </p>
-
-        <p>In February 2025, I was selected as 1 of 3 AI/ML Starter-Kit Developers at CS foreach, an equity-focused tech organization. 
-          Leveraging Python, Scikit-Learn, and Pandas, I developed a Stroke Predictor model, trained on 5K+ patient data to illustrate real-word applications of supervised learning concepts in healthcare (See Projects!).
-          We later launched the public-facing starter kit for the TritonHacks 2025 Hackathon, where I served as the lead mentor—guiding participants through model design, data handling, and evaluation strategies.</p>
-
-        <p>Building on this momentum, I later joined an ML research group @ CSES E/ACC, a student-run engineering team focused on building tools to support the academic community.
-          Our current focus is on designing an instrument transposition tool powered by PyTorch — a neural network that takes audio input and shifts it across instruments while preserving tone and pitch. 
-          It was a blend of music, ML, and problem-solving that showed how deep learning can be used in creative, not just analytical, ways.
-          I also contribute as a Technical Writer, where I break down AI + Software topics into clear, accessible insights for a wider audience.
-      </p>
-
-      <p>I’m constantly sharpening my skills in full-stack development (React, Express, Node, SQL, etc.) and AI/ML by coding ideas into tangible web apps (i.e. HistBytz, FinRisk.AI, etc.) that push me to think more critically about performance, usability, and real-world application. 
-        I’m excited to keep building, learning, and pushing myself — and I’m currently looking for a Computer Science internship where I can apply my skills, contribute meaningfully, and keep leveling up.</p>
-
-
-        <div class="contact-section">
-          ⭐ Let’s connect!<br>
-          Email: <a href="mailto:ashishvbamba@gmail.com">ashishvbamba@gmail.com</a><br>
-          LinkedIn: <a href="https://www.linkedin.com/in/ashishbamba/">ashishbamba</a><br>
-          GitHub: <a href="https://github.com/AshishBamba05">AshishBamba05</a>
+        <div class="contact-links">
+          <a href="mailto:ashishvbamba@gmail.com">Email</a> |
+          <a href="https://www.linkedin.com/in/ashishbamba/" target="_blank">LinkedIn</a> |
+          <a href="https://github.com/AshishBamba05" target="_blank">GitHub</a>
         </div>
+
+        <!-- Terminal-style About -->
+        <div class="terminal-window">
+          <div class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="terminal-body">
+            <pre id="terminal-text" aria-live="polite"></pre>
+              <div class="button-bar">
+                <button class="tbtn" id="restart-btn">Restart Typing</button>
+                <button class="tbtn" id="skipBtn" aria-label="Skip typing animation">Skip</button>
+              </div>
+          </div>
+
+          <div id="terminal">
+            <pre id="typed-text"></pre>
+        
       </div>
     </div>
   </section>
 
-<section id="course" class="course-section">
+ <!-- ===== Relevant Coursework (Interactive) ===== -->
+<section id="course" class="align-with-about">
   <h2>Relevant Coursework</h2>
-  <div class="coursework-container">
-    <div class="course-card">Accelerated Programming & Object-Oriented Design (CSE 11)</div>
-    <div class="course-card">Data Structures & Object-Oriented Design (CSE 12)</div>
-    <div class="course-card">Computer Organization & Systems Programming (CSE 30)</div>
-    <div class="course-card">Software Tools & Techniques Lab (CSE 15L)</div>
-    <div class="course-card">Mathematical Reasoning (MATH 109)</div>
-    <div class="course-card">Discrete Math & Graph Theory (MATH 154)</div>
-    <div class="course-card">Advanced Data Structures (CSE 100)</div>
-    <div class="course-card">Theory Of Computation (CSE 105)</div>
-  </div>
+
+  <ul class="course-tags" role="list">
+    <!-- Programming / Core -->
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        CSE 11 — OOP & Java
+      </button>
+      <div class="course-detail" role="region">
+        • If-else statements, loops, conditionals, break statements <br>
+        • Classes/objects, inheritance, interfaces<br>
+        • Testing, exceptions, I/O
+      </div>
+    </li>
+
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        CSE 12 — Data Structures
+      </button>
+      <div class="course-detail" role="region">
+        • Arrays/lists, stacks/queues, hash maps/sets<br>
+        • Trees, heaps, graphs & traversal<br>
+        • Asymptotic analysis; memory/layout implications
+      </div>
+    </li>
+
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        CSE 100 — Advanced Data Structures
+      </button>
+      <div class="course-detail" role="region">
+        • Balanced trees (AVL/Red-Black), union-find<br>
+        • Priority queues, range queries, amortized analysis<br>
+        • Graph shortest paths / MST patterns
+      </div>
+    </li>
+
+    <!-- Systems / Tooling -->
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        CSE 30 — Systems Programming
+      </button>
+      <div class="course-detail" role="region">
+        • C, pointers, manual memory, bit ops<br>
+        • Debugging/profiling: gdb, valgrind
+      </div>
+    </li>
+
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        CSE 15L — Software Tools & Techniques Lab
+      </button>
+      <div class="course-detail" role="region">
+        • Bash, Git, SSH, CI basics<br>
+        • Build/test automation; scripting for dev workflows<br>
+        • Debugging discipline & reproducibility
+      </div>
+    </li>
+
+    <!-- Theory / Math -->
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        CSE 105 — Theory of Computation
+      </button>
+      <div class="course-detail" role="region">
+        • DFAs/NFAs/regular languages; CFGs/PDAs<br>
+        • Decidability, reductions, Turing Machines<br>
+        • NP v. P, NP-complete, NP-hard
+      </div>
+    </li>
+
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        MATH 109 — Mathematical Reasoning
+      </button>
+      <div class="course-detail" role="region">
+        • Proof techniques (direct, contradiction, induction)<br>
+        • Sets, functions, relations<br>
+        • Rigorous problem decomposition
+      </div>
+    </li>
+
+    <li class="course">
+      <button class="course-pill" aria-expanded="false">
+        MATH 154 — Discrete Math & Graph Theory
+      </button>
+      <div class="course-detail" role="region">
+        • Graphs, connectivity, matching, coloring<br>
+        • Counting, recurrences, generating functions<br>
+        • Max-Flow Min-Cut, shortest paths
+      </div>
+    </li>
+  </ul>
 </section>
 
+<style>
+/* Technical, minimal styling */
+.course-section h2 { margin-left: 195px; color: #ff8c00; }
 
-<section id="skills" class="align-with-about">
-  <div class="skills-inner">
-    <h2>Skills</h2>
-    <h3>Programming Languages</h3>
-    <ul class="skills-grid">
-      <!-- chips -->
-       <li class="skill-card">Python</li>
-  <li class="skill-card">Java</li>
-  <li class="skill-card">JavaScript</li>
-  <li class="skill-card">TypeScript</li>
-  <li class="skill-card">C/C++</li>
-  <li class="skill-card">PHP</li>
-  <li class="skill-card">SQL</li>
-  <div class="break"></div>
-
-  <li class="skill-card">HTML/CSS</li>
-  <li class="skill-card">MATLAB</li>
-    </ul>
-  </div>
-</section>
+.course-tags {
+  margin: 12px 0 0 0;              /* remove the 195px push */
+  padding-left: 20px;              /* optional small indent */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 10px 14px;
+  max-width: 1100px;
+  list-style: none;
+  text-align: left;
+  justify-content: start;          /* keeps items hugging the left */
+}
 
 
+.course .course-pill{
+  width: 100%;
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: .95rem;
+  letter-spacing: .2px;
+  cursor: pointer;
+  transition: border-color .15s ease, background .15s ease, transform .12s ease;
+}
+
+.course .course-pill:hover,
+.course .course-pill:focus-visible{
+  border-color: #3b82f6;
+  background: rgba(59,130,246,0.08);
+  outline: none;
+}
+
+.course .course-pill[aria-expanded="true"]{
+  border-color: #22c55e;
+  background: rgba(34,197,94,0.10);
+}
+
+.course .course-detail{
+  display: none;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border-left: 2px solid rgba(255,255,255,0.15);
+  color: #cbd5e1;
+  font-size: .9rem;
+  line-height: 1.45;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+}
+
+.course.open .course-detail{ display: block; }
+
+.dropdown { position: relative; display: inline-block; }
+
+.dropdown-toggle {
+  display: inline-block;
+  text-decoration: none;
+  color: #0b0c10;
+  font-weight: 700;
+  background: #e9eefc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 2px 0 rgba(255,255,255,.25) inset, 0 6px 16px rgba(0,0,0,.25);
+  transition: transform .12s ease, filter .12s ease;
+}
+.dropdown-toggle:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #111827;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  min-width: 220px;
+  box-shadow: 0 12px 24px rgba(0,0,0,.45);
+  z-index: 20;
+  padding: 6px 0;
+}
+
+.dropdown-menu li { list-style: none; }
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #e5e7eb;
+  text-decoration: none;
+}
+.dropdown-menu a:hover {
+  background: rgba(59,130,246,.12);
+  color: #3b82f6;
+}
+
+
+/* Mobile alignment */
+@media (max-width: 768px){
+  .course-section h2 { margin-left: 0; }
+  .course-tags{ margin-left: 0; grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+// Accessible toggle: click or Enter/Space; closes others (accordion)
+document.querySelectorAll('.course .course-pill').forEach(btn => {
+  btn.addEventListener('click', toggle);
+  btn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.call(btn, e); }
+  });
+});
+
+function toggle(){
+  const li = this.closest('.course');
+  const expanded = this.getAttribute('aria-expanded') === 'true';
+
+  // close all
+  document.querySelectorAll('.course').forEach(c => {
+    c.classList.remove('open');
+    const b = c.querySelector('.course-pill');
+    if (b) b.setAttribute('aria-expanded','false');
+  });
+
+  // open the one clicked (if it wasn't already open)
+  if (!expanded) {
+    li.classList.add('open');
+    this.setAttribute('aria-expanded','true');
+  }
+}
+</script>
+
+
+  <section id="skills" class="align-with-about">
+    <div class="skills-inner">
+      <h2>Skills</h2>
+      <h3>Programming Languages</h3>
+      <ul class="skills-grid">
+        <li class="skill-card">Python</li>
+        <li class="skill-card">Java</li>
+        <li class="skill-card">JavaScript</li>
+        <li class="skill-card">TypeScript</li>
+        <li class="skill-card">C/C++</li>
+        <li class="skill-card">PHP</li>
+        <li class="skill-card">SQL</li>
+        <div class="break"></div>
+        <li class="skill-card">HTML/CSS</li>
+        <li class="skill-card">MATLAB</li>
+      </ul>
+    </div>
+  </section>
 
   <section id="projects" class="align-with-about">
-  <h2>Projects</h2>
+    <h2>Projects</h2>
 
-  <div class="projects-grid">
-    <!-- Card 1 -->
-    <article class="project-card">
-      <span class="accent"></span>
-      <header>
-        <h3>FinRisk.AI</h3>
-        <div class="tags">
-          <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>SQLite</span>
-        </div>
-      </header>
-      <p>
-        Production-grade loan default risk predictor trained on 250K+ profiles (AUC > 75%) with
-        live thresholding and persisted prediction logs.
-      </p>
-      <footer>
-        <a class="btn" href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank" rel="noopener">View Repo</a>
-      </footer>
-    </article>
+    <div class="projects-grid">
+      <article class="project-card">
+        <span class="accent"></span>
+        <header>
+          <h3>MuseScore+</h3>
+          <div class="tags">
+            <span>Python</span><span>PyTorch</span><span>Librosa</span><span>PrettyMIDI</span>
+          </div>
+        </header>
+        <p>
+          Engineered the audio-synthesis stack for MuseScore+: differentiable rendering and FluidSynth-based
+          instrument transposition with evaluation pipelines.
+        </p>
+        <footer>
+          <a class="btn" href="https://github.com/Mallika1405/E-Acc_Instrument_Transposition" target="_blank" rel="noopener">View Repo</a>
+        </footer>
+      </article>
 
-    <!-- Card 2 -->
-    <article class="project-card">
-      <span class="accent"></span>
-      <header>
-        <h3>HistBytz</h3>
-        <div class="tags">
-          <span>React</span><span>Vite</span><span>CSS Animations</span>
-        </div>
-      </header>
-      <p>
-        Interactive timeline of 500+ years of U.S. history with fast client-side search and animated event reveals.
-      </p>
-      <footer>
-        <a class="btn" href="https://github.com/AshishBamba05/histbytz-app" target="_blank" rel="noopener">View Repo</a>
-      </footer>
-    </article>
+      <article class="project-card">
+        <span class="accent"></span>
+        <header>
+          <h3>FinRisk.AI</h3>
+          <div class="tags">
+            <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>SQLite</span>
+          </div>
+        </header>
+        <p>
+          Production-grade loan default risk predictor trained on 250K+ profiles (AUC &gt; 75%)
+          with live thresholding and persisted prediction logs.
+        </p>
+        <footer>
+          <a class="btn" href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank" rel="noopener">View Repo</a>
+        </footer>
+      </article>
 
-    <!-- Card 3 -->
-    <article class="project-card">
-      <span class="accent"></span>
-      <header>
-        <h3>AI/ML Starter-Kit</h3>
-        <div class="tags">
-          <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Healthcare</span>
-        </div>
-      </header>
-      <p>
-        Public kit for TritonHacks 2025: stroke-risk classification with clear notebooks on data handling and evaluation.
-      </p>
-      <footer>
-        <a class="btn" href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank" rel="noopener">View Repo</a>
-      </footer>
-    </article>
-  </div>
-</section>
+      <article class="project-card">
+        <span class="accent"></span>
+        <header>
+          <h3>HistBytz</h3>
+          <div class="tags">
+            <span>React</span><span>Node</span><span>Express</span><span>Vite</span><span>CSS Animations</span>
+          </div>
+        </header>
+        <p>
+          React + Node web app rendering 500+ years of U.S. history with optimized client-side search,
+          dynamic event loading, and CSS-driven animations.
+        </p>
+        <footer>
+          <a class="btn" href="https://github.com/AshishBamba05/histbytz-app" target="_blank" rel="noopener">View Repo</a>
+        </footer>
+      </article>
 
+      <article class="project-card">
+        <span class="accent"></span>
+        <header>
+          <h3>AI/ML Starter-Kit</h3>
+          <div class="tags">
+            <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Healthcare</span>
+          </div>
+        </header>
+        <p>
+          Public kit for TritonHacks 2025: stroke-risk classification with clear notebooks on
+          data handling, modeling, and evaluation (selected 1 of 3 developers).
+        </p>
+        <footer>
+          <a class="btn" href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank" rel="noopener">View Repo</a>
+        </footer>
+      </article>
+
+      <article class="project-card">
+        <span class="accent"></span>
+        <header>
+          <h3>CSE15L (Software Tools & Techniques) Lab Projects</h3>
+          <div class="tags">
+            <span>Java</span><span>JUnit</span><span>Shell Scripting</span><span>Healthcare</span>
+          </div>
+        </header>
+        <p>
+          Developed proficiency with Linux, Git, and Bash to automate workflows, manage version control, and 
+          debug software in collaborative environments.
+        </p>
+        <footer>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" id="labBtn">View Repos ▾</button>
+              <ul class="dropdown-menu" id="labMenu">
+                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-1" target="_blank" rel="noopener">Lab 1 — cd, cat, ls terminal commands</a></li>
+                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-2" target="_blank" rel="noopener">Lab 2 — ChatServer</a></li>
+                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-3" target="_blank" rel="noopener">Lab 3 — Running JUnit through Shell Scripting</a></li>
+                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-7" target="_blank" rel="noopener">Lab 7 — ListExamples</a></li>
+              </ul>
+          </div>
+        </footer>
+
+      </article>
+    </div>
+  </section>
 
   <section id="recommendations" class="align-with-about">
     <h2>Recommendations</h2>
@@ -475,25 +879,92 @@ section { padding: 20px 40px; }
   <div id="homeIcon">🏠</div>
   <div class="popup" id="popup">Recommendation submitted!</div>
 
-  <script>
-    function addRecommendation() {
-      const input = document.getElementById("newRec");
-      const rec = input.value.trim();
-      if (rec) {
-        const div = document.createElement("div");
-        div.className = "recommendation";
-        div.textContent = rec;
-        document.getElementById("recList").appendChild(div);
-        input.value = "";
-        showPopup();
-      }
-    }
+<script>
+  // ===== Terminal typing =====
+  const terminalText = `>
 
-    function showPopup() {
-      const popup = document.getElementById("popup");
-      popup.style.display = "block";
-      setTimeout(() => popup.style.display = "none", 2000);
+I’m an undergrad junior at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from full-stack web apps to scalable backend systems — and I’m always looking for ways to bridge theory with execution.
+
+I started programming in high school through a Johns Hopkins Java program, which set the foundation for my CS journey. I’ve worked on projects ranging from personal apps like HistBytz (an interactive history explorer built with React/Node) to public-facing work like working as AI/ML Starter Kit Developer @ CS foreach, where I was selected as 1 of 3 developers to build a stroke predictor model on 5K+ patient records and mentored hackathon participants through model design and evaluation. These projects taught me how to balance technical depth with usability and deployment.
+
+Building on this momentum, I soon joined CSES E/Acc and contribute in multiple roles: as part of the ORCA research group, where we’re building a PyTorch-based instrument transposition tool that blends music and ML, and as a Technical Writer, where I break down AI + software topics into clear, accessible explainers for the student community. Both roles sharpened my ability to communicate complex systems while staying hands-on with engineering.
+
+I’m currently leveling up in full-stack development (e.g. React, Express, Node, SQL), system reliability, and applied ML (e.g. Scikit-Learn, TensorFlow, PyTorch). I’m now seeking a summer internship for 2026 where I can apply my skills, ship meaningful products, and keep growing as an engineer.
+`;
+
+  const pre = document.getElementById('terminal-text');
+  const skipBtn = document.getElementById('skipBtn');
+  const restartBtn = document.getElementById('restart-btn');
+
+  let idx = 0;
+  let typing = true;
+  let timerId = null;
+
+  function typeWriter() {
+    if (!typing) return;
+    if (idx < terminalText.length) {
+      pre.textContent += terminalText.charAt(idx++);
+      timerId = setTimeout(typeWriter, 22);
     }
-  </script>
+  }
+
+  function skipTyping() {
+    typing = false;
+    if (timerId) clearTimeout(timerId);
+    pre.textContent = terminalText;
+    skipBtn.style.display = 'none';
+  }
+
+  function restartTyping() {
+    typing = false;
+    if (timerId) clearTimeout(timerId);
+    // reset
+    pre.textContent = '';
+    idx = 0;
+    typing = true;
+    // show skip again in case it was hidden
+    skipBtn.style.display = '';
+    typeWriter();
+  }
+
+  skipBtn.addEventListener('click', skipTyping);
+  restartBtn.addEventListener('click', restartTyping);
+  window.addEventListener('load', typeWriter);
+
+  // ===== Recommendations =====
+  function addRecommendation() {
+    const input = document.getElementById("newRec");
+    const rec = input.value.trim();
+    if (rec) {
+      const div = document.createElement("div");
+      div.className = "recommendation";
+      div.textContent = rec;
+      document.getElementById("recList").appendChild(div);
+      input.value = "";
+      showPopup();
+    }
+  }
+  function showPopup() {
+    const popup = document.getElementById("popup");
+    popup.style.display = "block";
+    setTimeout(() => popup.style.display = "none", 2000);
+  }
+  // expose addRecommendation to inline onclick
+  window.addRecommendation = addRecommendation;
+
+  const btn = document.getElementById('labBtn');
+  const menu = document.getElementById('labMenu');
+
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+
+  // Close dropdown if you click outside
+  document.addEventListener('click', () => {
+    menu.style.display = 'none';
+  });
+</script>
+
 </body>
 </html>
