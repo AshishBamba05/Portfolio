@@ -64,19 +64,18 @@
 .about-text {
   flex: 1;
   min-width: 320px;
-  margin-bottom: 0;         /* remove the negative spacing */
-  padding-left: 20px;       /* optional: adds breathing room if you want it offset */
-  
+  margin-bottom: 0;         
+  padding-left: 20px;       
 }
 
 .about-text h1 {
   font-size: 2.4rem;
-  margin: 0 0 .5rem 0;      /* give a little more spacing under name */
+  margin: 0 0 .5rem 0;      
   color: #fff;
 }
 
 .about-text h2 {
-  margin: 0 0 20px 0;       /* consistent margins */
+  margin: 0 0 20px 0;       
 }
 
 
@@ -107,9 +106,10 @@
 
     .terminal-body {
       padding: 16px;
+      padding-bottom: -10px;
       min-height: 260px;
-      line-height: 1.4;
-      font-size: 0.98rem;
+      line-height: 1.7;
+      font-size: 1.2rem;
       position: relative;
     }
     #terminal-text {
@@ -190,14 +190,14 @@
   gap: 12px;
   list-style: none;
   margin: 12px 0 28px;
-  margin-left: -90px;   /* keep this for desktop */
+  margin-left: -90px;  
   padding: 0;
   justify-content: flex-start;
 }
 
 .skill-card {
   position: relative;
-  margin-left: 120px;   /* keep this for desktop */
+  margin-left: 120px;   
   padding: 12px 30px;
   border-radius: 14px;
   background: rgba(255,255,255,0.06);
@@ -344,7 +344,7 @@
       .project-card::before{ border-radius:16px; }
 
       .skills-grid{
-    grid-template-columns: 1fr;  /* single column on phones */
+    grid-template-columns: 1fr;  
     gap: 10px;
   }
   .skill-card{
@@ -357,11 +357,11 @@
 
 .terminal-intro {
   display: block;
-  font-size: 1.6rem;     /* bigger font */
-  font-weight: 700;      /* bold */
-  color: #00ff95;        /* neon green, tweak as needed */
-  text-align: center;    /* center it */
-  margin: 12px 0 20px 0; /* spacing */
+  font-size: 1.6rem;     
+  font-weight: 700;      
+  color: #00ff95;       
+  text-align: center;    
+  margin: 12px 0 20px 0; 
 }
 
 .contact-links {
@@ -392,7 +392,7 @@
 #restart-btn {
   margin-top: 10px;
   background: transparent;
-  border: 1px solid #3b82f6;   /* Tailwind blue */
+  border: 1px solid #3b82f6;  
   color: #3b82f6;
   padding: 6px 12px;
   border-radius: 6px;
@@ -409,10 +409,10 @@
 .button-bar {
   position: absolute;
   right: 12px;
-  bottom: -12px;
+  bottom: 4px;
   display: flex;
   gap: 8px;
-  align-items: flex-end;   /* align both buttons to the same bottom edge */
+  align-items: center;   
 }
 
 /* Unified terminal button style (applies to both) */
@@ -420,18 +420,18 @@
   background: transparent;
   border: 1px solid #3b82f6;
   color: #3b82f6;
-  padding: 8px 16px;         /* same vertical + horizontal padding */
+  padding: 8px 16px;         
   border-radius: 6px;
   font-weight: 600;
   font-size: 0.95rem;
-  line-height: 2;          /* keeps text height consistent */
+  line-height: 2;         
   cursor: pointer;
   transition: all .2s ease;
   box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset;
-  display: inline-flex;      /* normalize alignment */
-  align-items: center;       /* center text vertically */
+  display: inline-flex;      
+  align-items: center;      
   justify-content: center;
-  min-height: 45px;          /* force equal vertical size */
+  min-height: 44px;          
 }
 .tbtn:hover{
   background: #3b82f6;
@@ -441,18 +441,62 @@
 #skipBtn {
   padding-top: 8px;
   padding-bottom: 8px;
-  height: 44px;           /* match the Restart button height */
+  height: 44px;          
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 
-/* Optional: small screen tweak so buttons don't crowd */
+/* shows here */
 @media (max-width: 480px){
-  .button-bar{ gap: 6px; right: 10px; bottom: 10px; }
+  .button-bar{ gap: 6px; right: 10px; bottom: -22px; }
   .tbtn{ padding: 6px 10px; }
 }
+  .terminal-body{
+    padding-bottom: 20px; 
+    position: relative;   
+    line-height: 1.7;
+    font-size: 1.23rem;
+  }
+  .button-bar {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;  
+}
+
+  .tbtn{
+    height: 40px;   
+    padding: 0 12px;
+    line-height: 1;       
+    vertical-align: middle;
+  }
+
+  /* --- Mobile: ensure buttons are fully visible inside terminal --- */
+@media (max-width: 768px){
+  .terminal-body{
+    position: relative;
+    padding-bottom: max(96px, calc(env(safe-area-inset-bottom) + 72px));
+    line-height: 1.7;
+    font-size: 0.83rem;
+  }
+  .button-bar{
+    position: absolute;
+    right: 12px;
+    bottom: calc(env(safe-area-inset-bottom) + 16px);
+    gap: 8px;
+    align-items: flex-end;
+    flex-wrap: wrap;           
+  }
+  .tbtn{ height: 40px; padding: 0 12px; }  
+}
+
+/* If you previously used a negative bottom, cancel it on mobile */
+@media (max-width: 768px){
+  .button-bar{ bottom: calc(env(safe-area-inset-bottom) + 16px) !important; }
+}
+
+
 
 
 
@@ -883,7 +927,7 @@ function toggle(){
   // ===== Terminal typing =====
   const terminalText = `>
 
-I’m an undergrad junior at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from full-stack web apps to scalable backend systems — and I’m always looking for ways to bridge theory with execution.
+I’m an undergrad junior at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from scalable backend systems to full-stack web apps — and I’m always looking for ways to bridge theory with execution.
 
 I started programming in high school through a Johns Hopkins Java program, which set the foundation for my CS journey. I’ve worked on projects ranging from personal apps like HistBytz (an interactive history explorer built with React/Node) to public-facing work like working as AI/ML Starter Kit Developer @ CS foreach, where I was selected as 1 of 3 developers to build a stroke predictor model on 5K+ patient records and mentored hackathon participants through model design and evaluation. These projects taught me how to balance technical depth with usability and deployment.
 
