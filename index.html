@@ -1092,8 +1092,179 @@ body { padding-bottom: 56px; }   /* adjust if you change footer height */
   min-width: 0 !important;
   white-space: normal !important;
 }
-
 }
+
+.profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  border: 4px solid transparent;   /* base border */
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);          /* slight pop-out */
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59,130,246,0.6);
+}
+
+
+.banner-container {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  border: 4px solid transparent;  /* base border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  border-radius: 12px;            /* optional: soften corners */
+}
+
+.banner-container:hover {
+  transform: scale(1.02);         /* subtle zoom */
+  border-color: #3b82f6;
+  box-shadow: 0 0 20px rgba(59,130,246,0.6);
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 45%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.banner-container:hover .banner-image {
+  transform: scale(1.05);         /* image itself zooms slightly */
+}
+
+.banner-container {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.banner-image {
+  display: block;     /* remove inline gap */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 0;   /* remove any default border */
+}
+
+header:hover {
+  transform: scale(1.01);  /* subtle pop */
+  box-shadow:
+    0 0 0 3px #ff8c00 inset,      /* inner highlight border */
+    0 0 18px rgba(255,140,0,.6);  /* glow */
+}
+
+.site-footer {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 0;   /* remove your solid top border */
+}
+
+.site-footer:hover {
+  transform: scale(1.01);
+  box-shadow:
+    0 0 0 3px #3b82f6 inset,      /* pick your color */
+    0 0 18px rgba(59,130,246,.6);
+}
+
+.terminal-window {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 0;  /* remove static border if you added one */
+}
+
+.terminal-window:hover {
+  transform: scale(1.01);
+  box-shadow:
+    0 0 0 3px #10b981 inset,       /* inner border, pick a color */
+    0 0 22px rgba(16,185,129,.6);  /* glow */
+}
+
+/* === Unified highlight vars (change once, updates everywhere) === */
+:root{
+  --hl: #ff8c00;                 /* highlight color */
+  --hl-glow: rgba(255,140,0,.55); /* outer glow */
+}
+
+/* Base (no real border to avoid gaps) */
+.skill-card-simple,
+.skill-group{
+  border: 0;
+  border-radius: 16px;
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+  will-change: transform;
+}
+
+/* Hover/focus: pop + inner “border” + glow */
+.skill-card-simple:hover,
+.skill-group:hover,
+.skill-card-simple:focus-within,
+.skill-group:focus-within{
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 0 0 3px var(--hl) inset,     /* inner border */
+    0 0 22px var(--hl-glow);       /* outer glow */
+}
+
+/* Optional: make the section headings inside glow a touch too */
+.skill-group h3:hover { filter: brightness(1.05); }
+
+/* Touch devices: use active instead of hover */
+@media (hover: none){
+  .skill-card-simple:active,
+  .skill-group:active{
+    transform: translateY(-1px) scale(1.005);
+    box-shadow:
+      0 0 0 3px var(--hl) inset,
+      0 0 18px var(--hl-glow);
+  }
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce){
+  .skill-card-simple, .skill-group{ transition: box-shadow .2s ease; }
+}
+
+.banner-container {
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fills cleanly */
+  display: block;
+}
+
+
+
+
+body {
+  background:
+    radial-gradient(circle at 25% 25%, rgba(20, 40, 30, 0.7), transparent 40%),
+    radial-gradient(circle at 75% 75%, rgba(15, 50, 35, 0.6), transparent 50%),
+    linear-gradient(135deg, #101818, #132821, #1a3d32),
+    url('https://www.transparenttextures.com/patterns/noise.png');
+  background-size: cover, cover, cover, 200px 200px;
+  background-blend-mode: overlay;
+  color: #fff;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;           /* fill the container */
+  object-position: center 66%; /* shift focus downward */
+}
+
 
 
 
@@ -1112,7 +1283,7 @@ body { padding-bottom: 56px; }   /* adjust if you change footer height */
   </header>
 
   <div class="banner-container">
-    <img src="beach.png" alt="Banner Image" class="banner-image" />
+    <img src="bg.png" alt="Banner Image" class="banner-image" />
   </div>
 
   <section id="about" class="section-container">
