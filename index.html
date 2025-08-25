@@ -4,934 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ashish V Bamba Portfolio Page</title>
-  <style>
-
-
-/* CONSISTENT INDENTS */
-.section-title {
-  margin-left: 20px; 
-  color: #ff8c00;
-  font-weight: 700;
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    margin-left: 0 !important;
-    text-align: center; 
-  }
-}
-
-
-/* START OF BASE CODE*/
-body {
-  color: #fff;
-  font-family: 'Trebuchet MS', sans-serif;
-  background:
-    repeating-linear-gradient(90deg,
-      rgba(80,120,200,0.1) 0px, rgba(80,120,200,0.1) 75px,
-      transparent 75px, transparent 150px),
-    repeating-linear-gradient(0deg,
-      rgba(80,120,200,0.1) 0px, rgba(80,120,200,0.1) 75px,
-      transparent 75px, transparent 150px),
-    linear-gradient(135deg, #0a0f18, #101828, #1a2f40);
-  background-size: 150px 150px;
-  color: #d0e6ff;
-  }
-
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-.container {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
-/* END OF BASE CODE*/
-
-
-/*START OF NAME + ABOUT CODE*/
- #name { font-weight: 700; font-size: 1.5em; margin-right: auto; }
-
-  h1, h2 { color: #ff8c00; }
-
-  section { padding: 20px 40px; }
-  .section-container { max-width: 1400px; margin: 0 auto 50px; }
-
-  .about-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  align-items: flex-start;
-  }
-    
-.about-text {
-  flex: 1;
-  min-width: 320px;
-  margin-bottom: 0;         
-  padding-left: 20px;       
-}
-
-.about-text h1 {
-  font-size: 2.4rem;
-  margin: 0 0 .5rem 0;      
-  color: #fff;
-}
-/*END OF NAME + ABOUT CODE*/
-
-
-
-/*START OF CONTACT CODE*/
-
-.sr-only {
-  position:absolute; width:1px; height:1px; padding:0; margin:-1px;
-  overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0;
-}
-
-.contact-icons{
-  display:flex; gap:12px; align-items:center;
-  margin-top:8px;
-}
-
-.icon{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px; border-radius:10px;
-  background: rgba(255,255,255,0.06);
-  border:1px solid rgba(255,255,255,0.18);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 6px 18px rgba(0,0,0,0.35);
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease, background .15s ease;
-}
-
-.ico{ width:20px; height:20px; fill:#c7d2fe; } 
-
-.icon:hover, .icon:focus-visible{
-  transform: translateY(-2px);
-  border-color: rgba(255,255,255,0.32);
-  background: rgba(59,130,246,0.12);
-  outline: none;
-}
-
-.icon.email:hover .ico{ fill:#38bdf8; }     
-.icon.linkedin:hover .ico{ fill:#0a66c2; }  
-.icon.github:hover .ico{ fill:#f5f5f5; }    
-
-@media (max-width: 768px){
-  .icon{ width:36px; height:36px; border-radius:8px; }
-  .ico{ width:18px; height:18px; }
-}
-/*END OF CONTACT CODE*/
-
-
-
-/*START OF PROFILE PIC CODE*/
-@keyframes floatProfilePic {
-  0%   { transform: translate3d(0, 0, 0); }
-  50%  { transform: translate3d(5px, -10px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-.profile-pic {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-  border: 4px solid transparent;   /* base border */
-  animation: floatProfilePic 3s ease-in-out infinite;
-}
-
-.profile-pic:hover {
-  transform: scale(1.05);          /* slight pop-out */
-  border-color: #3b82f6;
-  box-shadow: 0 0 20px rgba(59,130,246,0.6);
-}
-/*END OF PROFILE PIC CODE*/
-
-
-
-/*START OF HEADER CODE (NAV BAR)*/
-header {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 0;   
-  display: flex;
-  align-items: center;
-  padding: 10px 16px;
-  background: #333;
-  color: #fff;
-  position: sticky;
-  top: 0;
-  z-index: 20;
-}
-
-header:hover {
-  transform: scale(1.01);  
-  box-shadow:
-    0 0 0 3px #ff8c00 inset,      
-    0 0 18px rgba(255,140,0,.6);  
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 15px;
-}
-
-nav a:hover { text-decoration: underline; font-style: italic; }
-/*END OF HEADER CODE (NAV BAR)*/
-
-
-
-/*START OF FOOTER CODE*/
-.site-footer {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  position: fixed;
-  left: 0; right: 0; bottom: 0;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  color: #e5e7eb;
-  box-shadow: 0 -4px 16px rgba(0,0,0,.25); 
-  font-size: 0.9rem;
-}
-
-.site-footer:hover {
-  transform: scale(1.01);
-  box-shadow:
-    0 0 0 3px #3b82f6 inset,      
-    0 0 18px rgba(59,130,246,.6);
-}
-
-.site-footer .footer-inner{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 16px;
-  display: flex;
-  justify-content: center;       
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;               
-}
-
-.site-footer a{
-  color: #2563eb;                
-  text-decoration: none;
-}
-.site-footer a:hover{ text-decoration: underline; }
-.site-footer .sep{ opacity: .6; }
-
-@supports (padding: max(0px)) {
-  .site-footer { padding-bottom: max(0px, env(safe-area-inset-bottom)); }
-}
-/*END OF FOOTER CODE*/
-
-
-
-/*START OF TERMINAL CODE*/
-.terminal-window {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  border: 0;  
-  background: #1e1e1e;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
-  overflow: hidden;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
-  color: #c5f7e7;
-  position: relative;
-  margin-top: 20px;
-}
-
-.terminal-window:hover {
-  transform: scale(1.01);
-  box-shadow:
-    0 0 0 3px #10b981 inset,       
-    0 0 22px rgba(16,185,129,.6);  
-}
-
-.terminal-header {
-  display: flex;
-  gap: 8px;
-  padding: 6px 12px;
-  background: #2c2c2c;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-
-.terminal-header .dot {
-  width: 12px; height: 12px; border-radius: 50%; display: inline-block;
-}
-
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-
-
-.terminal-body {
-  padding: 16px;
-  min-height: 260px;
-  padding-bottom: 20px; 
-  position: relative;   
-  line-height: 1.7;
-  font-size: 1.23rem;
-  }
-
-#terminal-text {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-}
-
-
-.tbtn{
-  height: 40px;   
-  line-height: 1;       
-  vertical-align: middle;
-  background: transparent;
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
-  padding: 8px 16px;         
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.95rem;       
-  transition: all .2s ease;
-  min-height: 44px;          
-}
-
-.tbtn:hover{
-  background: #3b82f6;
-  color: #fff;
-}
-/*END OF TERMINAL CODE*/
-
-
-:root{
-  --hl: #ff8c00;                 
-  --hl-glow: rgba(255,140,0,.55); 
-}
-
-
-/*START OF BANNER CODE*/
-.banner-container {
-  width: 100%;
-  height: 270px;
-  overflow: hidden;
-  background: #000;       
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  border: 4px solid transparent;
-}
-
-.banner-container > img.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;      
-  object-position: center center;  
-  display: block;
-  margin: 0;
-  padding: 0;
-  transform: scale(1);     
-  transition: transform 0.4s ease;
-}
-
-.banner-container:hover > img.banner-image {
-  transform: scale(2);  
-}
-
-.banner-container:hover {
-  box-shadow: 0 0 20px 4px rgba(0, 120, 255, 0.7);
-  border: 2px solid rgba(0, 120, 255, 0.9);
-}
-
-.banner-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;          
-  object-position: center 60%; 
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.banner-container {
-  border: none;         
-  border-radius: 0;      
-  box-shadow: none;   
-  height: 430px;   
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-  background: transparent;   /* let body background show through */
-}
-/*END OF BANNER CODE*/
-
-
-
-/*START OF COURSE CODE*/
-.course-pill {
-  display: block;                    
-  width: 100%;
-  text-align: left;
-  padding: 10px 14px;
-  border-radius: 12px;
-  border: 1px solid #2a2a2a;
-  background: #0b0b0b;
-  color: #eaeaea;
-  cursor: pointer;
-
-
-  transition: transform .18s ease,
-              box-shadow .18s ease,
-              background-color .18s ease,
-              border-color .18s ease;
-  will-change: transform, box-shadow;
-}
-
-.course-pill:hover,
-.course-pill:focus-visible {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 0 14px rgba(0, 120, 255, .5);
-  background-color: rgba(0, 120, 255, .12);
-  border-color: rgba(0, 120, 255, .7);
-  outline: none;                    
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .course-pill { transition: box-shadow .18s ease, border-color .18s ease, background-color .18s ease; }
-  .course-pill:hover,
-  .course-pill:focus-visible { transform: none; }
-}
-
-
-.course-tags {
-  background: #0b0b0b;
-  border: 1px solid #2a2a2a;
-  border-radius: 14px;
-  padding: 20px;
-  list-style: none;         
-  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-}
-
-.course-tags:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 18px rgba(0, 120, 255, 0.5);
-  border-color: rgba(0, 120, 255, 0.7);
-}
-
-.course-tags {
-  margin-top: -10px !important;
-}
-
-#course {
-  margin-bottom: 10px !important;
-  margin-right: 5px !important;
-}
-
-
-.course-tags {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(240px, 1fr)); 
-  gap: 16px 18px;
-  width: 100%;
-  max-width: none;
-
-  list-style: none;      
-  margin: 12px 0 0 -30px;   
-  padding-left: 1px;       
-  padding-right: 24px;   
-}
-
-
-/* Responsive collapse */
-@media (max-width: 1280px){
-  .course-tags{ grid-template-columns: repeat(3, minmax(220px, 1fr)); }
-}
-@media (max-width: 960px){
-  .course-tags{ grid-template-columns: repeat(2, minmax(220px, 1fr)); }
-}
-@media (max-width: 600px){
-  .course-tags{ grid-template-columns: 1fr; padding-right: 16px; }
-}
-
-
-.course .course-pill{
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: #e5e7eb;
-  padding: 10px 12px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: .95rem;
-  letter-spacing: .2px;
-  cursor: pointer;
-  transition: border-color .15s ease, background .15s ease, transform .12s ease;
-}
-
-.course .course-detail{
-  display: none;
-  margin-top: 6px;
-  padding: 10px 12px 12px;
-  border-left: 2px solid rgba(255,255,255,0.15);
-  color: #cbd5e1;
-  font-size: .9rem;
-  line-height: 1.45;
-  background: rgba(255,255,255,0.03);
-  border-radius: 8px;
-}
-
-.course.open .course-detail{ display: block; }
-
-/* Mobile alignment */
-@media (max-width: 768px){
-  .course-section h2 { margin-left: 0; }
-  .course-tags{ margin-left: 0; grid-template-columns: 1fr; }
-}
-
-@keyframes floatCourse {
-  0%   { transform: translate3d(0, 0, 0); }
-  50%  { transform: translate3d(7px, -5px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-/*END OF COURSE CODE*/
-
-
-
-/*START OF SKILLS CODE*/
-.skill-card-simple h3 {
-  margin: 0 0 10px 0;
-  color: #e7e7e7;
-  font-weight: 700;
-  letter-spacing: .2px;
-  border-bottom: 2px solid #ff8c00; 
-  display: inline-block;
-  padding-bottom: 2px;
-}
-
-.badge:hover {
-  border-color: #ff8c00;
-  box-shadow: 0 0 6px rgba(255,140,0,0.6);
-  cursor: default;
-
-  transform: scale(1.08);
-  background: #1a1a1a;
-  box-shadow: 0 0 10px rgba(255, 140, 0, 0.6);
-}
-
-
-.skills-simple {
-  display: flex;
-  justify-content: flex-start; 
-  align-items: flex-start;    
-  gap: 40px;
-  margin-top: 8px;
-}
-
-.skill-card-simple{
-  flex: 1 1 auto;
-  min-width: 0;
-  background: #0f0f10;
-  border: 1px solid #222;
-  border-radius: 14px;
-  padding: 14px 18px;
-}
-
-@media (max-width: 768px){
-  .skills-simple {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important; /* center cards horizontally */
-    gap: 24px !important;           /* spacing between cards */
-  }
-
-  .skill-card-simple {
-    width: 90% !important;          /* shrink slightly so they don't hug edges */
-    max-width: 400px !important;    /* cap width for readability */
-    margin: 0 auto !important;      /* force center alignment */
-    transform: none !important;
-    animation: none !important;
-  }
-
-
-  .skills-filter{
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .skill-grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px !important;
-  }
-
-  .badge{
-    max-width: none !important;
-    width: 100% !important;
-    transform: none !important;     
-  }
-}
-
-.skill-grid {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
-  gap: 12px;
-  justify-items: center;  
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 40px;
-  padding: 8px 12px;                 
-  border: 1px solid #2b2b2b;
-  border-radius: 20px;               
-  background: #121212;
-  color: #e6e6e6;
-  font-weight: 600;
-  letter-spacing: .1px;
-  width: 100%;
-  max-width: 180px;                
-  box-sizing: border-box;
-
-  white-space: normal;             
-  overflow-wrap: anywhere;
-  word-break: break-word;
-
-  transition: transform .2s ease, 
-              box-shadow .2s ease, 
-              background .2s ease, 
-              border-color .2s ease;
-}
-
-
-@media (max-width: 1200px){
-  .skill-grid{ grid-template-columns: repeat(4, minmax(120px, 1fr)); }
-}
-@media (max-width: 900px){
-  .skills-simple{ grid-template-columns: 1fr; }
-  .skill-grid{ grid-template-columns: repeat(3, minmax(120px, 1fr)); }
-}
-@media (max-width: 600px){
-  .skill-grid{ grid-template-columns: repeat(2, minmax(120px, 1fr)); }
-}
-
-
-.filter-btn.active {
-  background: #ff8c00;
-  color: #000;
-  font-weight: 700;
-}
-
-.skills-filter{
-  position: relative; display:inline-flex; gap:8px; padding:4px;
-  background:#0b0b0b; border:1px solid #2b2b2b; border-radius:10px;
-}
-
-.filter-btn{
-  position:relative; z-index:1; padding:6px 14px; border:0; background:transparent;
-  color:#e6e6e6; font-weight:600; border-radius:8px; cursor:pointer;
-  transition: all 0.25s ease;
-  cursor: pointer;
-}
-
-.filter-btn:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 12px rgba(0, 120, 255, 0.6); 
-  background-color: rgba(0, 120, 255, 0.2);    
-  border: 1px solid rgba(0, 120, 255, 0.8);    
-}
-
-.badge{ transition: transform .18s ease, opacity .18s ease; }
-.badge.is-hiding{ opacity:0; transform:scale(.86); pointer-events:none; }
-.badge.is-showing{ opacity:1; transform:scale(1); }
-.badge[hidden]{ display:none; }
-
-@keyframes floatSkill {
-  0%   { transform: translate3d(0, 0, 0); }
-  50%  { transform: translate3d(5px, -10px, 0); }
-  100% { transform: translate3d(0, 0, 0); }
-}
-
-.skill-card-simple {
-  animation: floatSkill 3s ease-in-out infinite;
-}
-
-.skill-card-simple:hover,
-.skill-group:hover,
-.skill-card-simple:focus-within,
-.skill-group:focus-within{
-  transform: translateY(-2px) scale(1.01);
-  box-shadow:
-    0 0 0 3px var(--hl) inset,    
-    0 0 22px var(--hl-glow);      
-}
-
-@media (max-width: 768px) {
-  #skills {
-    margin-bottom: 40px !important; 
-  }
-}
-/*END OF SKILLS CODE*/
-
-
-
-/*START OF PROJECTS CODE*/
-.projects-grid {
-  display:grid;
-  grid-template-columns: repeat(4, minmax(280px, 1fr)); 
-  padding-right: 90px;
-  gap:18px;
-  margin-top:12px;
-}
-
-.project-card{
-  position:relative;
-  background:#0b0c10;
-  color:#e8eaed;
-  border-radius:18px;
-  padding:18px 18px 14px 18px;
-  isolation:isolate;
-  box-shadow:0 8px 24px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.03);
-  transition:transform .18s ease, box-shadow .18s ease;
-  }
-
-.project-card::before{
-  content:"";
-  position:absolute; inset:0;
-  border-radius:18px;
-  padding:1px;
-  background:conic-gradient(
-    from 180deg,
-      #ff8a00, #ff4d00, #3b82f6, #10b981, #a855f7, #ef4444, #06b6d4, #94a3b8, #ff8a00
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite:xor; mask-composite:exclude;
-    opacity:.35; transition:opacity .2s ease;
-    pointer-events:none;
-  }
-
-.project-card .accent{
-  position:absolute; left:0; top:14px; bottom:14px; width:6px; border-radius:6px;
-  background:linear-gradient(180deg,#ff8a00,#ff4d00);
-  opacity:.9;
-}
-.projects-grid .project-card:nth-child(2) .accent{
-  background:linear-gradient(180deg,#3b82f6,#1d4ed8);
-}
-.projects-grid .project-card:nth-child(3) .accent{
-  background: linear-gradient(180deg, #7e22ce, #4c1d95);
-}
-.projects-grid .project-card:nth-child(4) .accent{
-  background: linear-gradient(180deg, #10b981, #047857);
-}
-
-.project-card header{
-  display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;
-}
-.project-card h3{
-  margin:0; font-size:1.15rem; letter-spacing:.2px; color:#fff;
-}
-
-.project-card .tags{ display:flex; gap:8px; flex-wrap:wrap; }
-.project-card .tags span{
-  font-size:.72rem; color:#cfd3d8; background:rgba(255,255,255,.06);
-  border:1px solid rgba(255,255,255,.12); padding:4px 8px; border-radius:999px;
-}
-
-.project-card p{ margin:10px 0 12px 0; line-height:1.35; color:#d9dde3; }
-
-.project-card .btn{
-  display:inline-block; text-decoration:none; color:#0b0c10; font-weight:700;
-  background:#e9eefc; border-radius:10px; padding:8px 12px;
-  box-shadow:0 2px 0 rgba(255,255,255,.25) inset, 0 6px 16px rgba(0,0,0,.25);
-  transition:transform .12s ease, filter .12s ease;
-}
-.project-card .btn:hover{ transform:translateY(-1px); filter:brightness(1.05); }
-
-.project-card:hover{ transform:translateY(-4px); box-shadow:0 14px 32px rgba(0,0,0,.5); }
-.project-card:hover::before{ opacity:.7; }
-
-.course {
-  animation: floatCourse 3s ease-in-out infinite;
-}
-/*END OF PROJECTS CODE*/
-
-
-
-/*START OF RECOMMENDATIONS CODE*/
-#homeIcon { position: fixed; bottom: 10px; right: 10px; font-size: 24px; }
-.popup {
-  display: none; position: fixed; bottom: 50px; right: 10px;
-  background: #28a745; color: #fff; padding: 10px; border-radius: 5px;
-  z-index: 30;
-}
-#recommendations .recommendation {
-  color: #ffffff;   
-  margin: 8px 0;    
-}
-/*END OF RECOMMENDATIONS CODE*/ 
-
-
-/* --- Mobile: ensure buttons are fully visible inside terminal --- */
-@media (max-width: 768px){
-
-  .terminal-body{
-    position: relative;
-    padding-bottom: max(96px, calc(env(safe-area-inset-bottom) + 72px));
-    line-height: 1.7;
-    font-size: 0.83rem;
-  }
-  .button-bar{
-    position: absolute;
-    right: 12px;
-    bottom: calc(env(safe-area-inset-bottom) + 16px) !important;
-    gap: 8px;
-    align-items: flex-end;
-    flex-wrap: wrap;           
-  }
-  .tbtn{
-    height: 40px;
-    padding: 0 12px;
-  }  
-}
-
-
-
-/* ===================== MOBILE ≤768px ===================== */
-@media (max-width: 768px) {
-  html, body { margin: 0; padding: 0; overflow-x: hidden; }
-
-  .profile-pic {
-    width: clamp(150px, 45vw, 220px) !important;
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block;
-    margin: 0 auto;
-  }
-  .profile-pic-wrap {
-    width: auto !important;
-    height: auto !important;
-    overflow: visible !important;
-  }
-
-
-  #skills .skill-card-simple + .skill-card-simple,
-  #skills .skill-card + .skill-card { margin-top: 48px !important; }
-
-
-  #projects,
-  .projects,
-  .projects-grid {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding-inline: 16px !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .projects-grid {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) !important;
-    gap: 16px !important;
-    margin-top: 8px !important;
-  }
-  #projects { padding-top: 0 !important; margin-top: 8px !important; }
-  #projects > h2 { margin-top: 0 !important; }
-
-  /* Cards fit & wrap properly */
-  #projects .project-card,
-  .projects .card,
-  .projects .item {
-    display: flex;
-    flex-direction: column;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    margin-top: 24px !important;
-  }
-  .project-card > *,
-  .project-card header,
-  .project-card p,
-  .project-card footer { min-width: 0 !important; flex: 1 1 auto; }
-
-  .project-card header {
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-  }
-  .project-card h3 {
-    flex: 1 1 100% !important;
-    min-width: 0 !important;
-    white-space: normal !important;
-  }
-  .project-card p,
-  .project-card .desc {
-    white-space: normal !important;
-    overflow-wrap: anywhere !important;
-    word-break: break-word !important;
-  }
-  .project-card .tags,
-  .project-card .chips,
-  .project-card .badge-row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
-    white-space: normal !important;
-  }
-
-  .project-card img,
-  .project-card video,
-  .project-card .btn,
-  .project-card a.button {
-    max-width: 100% !important;
-    height: auto !important;
-    white-space: normal !important;
-  }
-
-  .project-card[style*="transform"],
-  .projects [style*="translate"],
-  .projects [style*="left:"],
-  .projects [style*="right:"] {
-    transform: none !important;
-    left: 0 !important;
-    right: 0 !important;
-    position: static !important;
-  }
-
-  .project-card + .project-card,
-  .skill-card + .skill-card,
-  [class*="stack"] { margin-top: 24px !important; }
-}
-
-
-@media (hover: none){
-  .skill-card-simple:active,
-  .skill-group:active{
-    transform: translateY(-1px) scale(1.005);
-    box-shadow:
-      0 0 0 3px var(--hl) inset,
-      0 0 18px var(--hl-glow);
-  }
-}
-
-@media (prefers-reduced-motion: reduce){
-  .skill-card-simple, .skill-group{ transition: box-shadow .2s ease; }
-}
-
-@media (max-width: 768px) {
-  .course-tags {
-    margin-top: 10px !important;
-  }
-  #projects h2 {
-  margin-bottom: -5px !important; /* shrink spacing under title */
-}
-}
-
-
-
-  </style>
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
@@ -1123,37 +197,6 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   </ul>
 </section>
 
-<style>
-
-</style>
-
-<script>
-// Accessible toggle: click or Enter/Space; closes others (accordion)
-document.querySelectorAll('.course .course-pill').forEach(btn => {
-  btn.addEventListener('click', toggle);
-  btn.addEventListener('keydown', e => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle.call(btn, e); }
-  });
-});
-
-function toggle(){
-  const li = this.closest('.course');
-  const expanded = this.getAttribute('aria-expanded') === 'true';
-
-  document.querySelectorAll('.course').forEach(c => {
-    c.classList.remove('open');
-    const b = c.querySelector('.course-pill');
-    if (b) b.setAttribute('aria-expanded','false');
-  });
-
-  if (!expanded) {
-    li.classList.add('open');
-    this.setAttribute('aria-expanded','true');
-  }
-}
-</script>
-
-
 
   <section id="skills" class="section-title">
   <h2>Skills</h2>
@@ -1176,6 +219,7 @@ function toggle(){
       <li class="badge" data-tags="swe">C/C++</li>
       <li class="badge" data-tags="swe">SQL</li>
       <li class="badge" data-tags="swe">HTML/CSS</li>
+      <li class="badge" data-tags="swe">Shell</li>
     </ul>
   </section>
 
@@ -1186,6 +230,7 @@ function toggle(){
       <li class="badge" data-tags="swe">Node.js</li>
       <li class="badge" data-tags="swe">Express</li>
       <li class="badge" data-tags="swe">SQLite</li>
+      <li class="badge" data-tags="swe">JUnit</li>
       <li class="badge" data-tags="ml">scikit-learn</li>
       <li class="badge" data-tags="ml">PyTorch</li>
       <li class="badge" data-tags="ml">Pandas</li>
@@ -1201,227 +246,153 @@ function toggle(){
     <h2>Projects</h2>
 
     <div class="projects-grid">
-      <article class="project-card">
-        <span class="accent"></span>
-        <header>
-          <h3>MuseScore+ (ORCA Research)</h3>
-          <div class="tags">
-            <span>Python</span><span>PyTorch</span><span>Librosa</span><span>PrettyMIDI</span>
-          </div>
-        </header>
-        <p>
-          Engineered the audio-synthesis stack for MuseScore+: differentiable rendering and FluidSynth-based
-          instrument transposition with evaluation pipelines.
-        </p>
-        <footer>
-          <a class="btn" href="https://github.com/Mallika1405/E-Acc_Instrument_Transposition" target="_blank" rel="noopener">View Repo</a>
-        </footer>
-      </article>
+      <div class="project-card">
+         <span class="accent"></span>
+         
+  <div class="card-content">
+    <h3>MuseScore+ (ORCA Research)</h3>
+    <div class="tags">
+      <span>Python</span>
+      <span>PyTorch</span>
+      <span>Librosa</span>
+      <span>PrettyMIDI</span>
+    </div>
+    <div class="project-desc">
+    <p>
+      Engineered the audio-synthesis stack for MuseScore+: differentiable rendering
+      and FluidSynth-based instrument transposition with evaluation pipelines.
+    </p>
+    </div>
+  </div>
 
-      <article class="project-card">
-        <span class="accent"></span>
-        <header>
-          <h3>FinRisk.AI</h3>
-          <div class="tags">
-            <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>SQLite</span>
-          </div>
-        </header>
-        <p>
-          Production-grade loan default risk predictor trained on 250K+ profiles (AUC &gt; 75%)
-          with live thresholding and persisted prediction logs.
-        </p>
-        <footer>
-          <a class="btn" href="https://github.com/AshishBamba05/FinRisk.AI" target="_blank" rel="noopener">View Repo</a>
-        </footer>
-      </article>
+  <div class="card-footer">
+    <a class="btn" href="https://github.com/Mallika1405/E-Acc_Instrument_Transposition">View Repo</a>
+    <img class="org-logo" src="cses_e_acc_logo.jpeg" alt="ORCA Research logo">
+  </div>
+</div>
 
-      <article class="project-card">
-        <span class="accent"></span>
-        <header>
-          <h3>HistBytz</h3>
-          <div class="tags">
-            <span>React</span><span>Node</span><span>Express</span><span>Vite</span><span>CSS Animations</span>
-          </div>
-        </header>
-        <p>
-          React + Node web app rendering 500+ years of U.S. history with optimized client-side search,
-          dynamic event loading, and CSS-driven animations.
-        </p>
-        <footer>
-          <a class="btn" href="https://github.com/AshishBamba05/histbytz-app" target="_blank" rel="noopener">View Repo</a>
-        </footer>
-      </article>
 
-      <article class="project-card">
-        <span class="accent"></span>
-        <header>
-          <h3>AI/ML Public Starter-Kit</h3>
-          <div class="tags">
-            <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Healthcare</span>
-          </div>
-        </header>
-        <p>
-          Public kit for TritonHacks 2025: stroke-risk classification with clear notebooks on
-          data handling, modeling, and evaluation (selected 1 of 3 developers).
-        </p>
-        <footer>
-          <a class="btn" href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit" target="_blank" rel="noopener">View Repo</a>
-        </footer>
-      </article>
+      <div class="project-card">
+      <span class="accent"></span>
+  <div class="card-top">
+    <h3>FinRisk.AI</h3>
+    <div class="tags">
+      <span>Python</span><span>XGBoost</span><span>Streamlit</span><span>SQLite</span>
+    </div>
+  </div>
+  <div class="project-desc">
+  <p>
+    Production-grade loan default risk predictor trained on 250K+ profiles (AUC > 75%)
+    with live thresholding and persisted prediction logs.
+  </p>
+  </div>
 
-      <article class="project-card">
-        <span class="accent"></span>
-        <header>
-          <h3>CSE15L (Software Tools & Techniques) Lab Projects</h3>
-          <div class="tags">
-            <span>Java</span><span>JUnit</span><span>Shell Scripting</span><span>Healthcare</span>
-          </div>
-        </header>
-        <p>
-          Developed proficiency with Linux, Git, and Bash to automate workflows, manage version control, and 
-          debug software in collaborative environments.
-        </p>
-        <footer>
-          <div class="dropdown">
-            <button class="btn dropdown-toggle" id="labBtn">View Repos ▾</button>
-              <ul class="dropdown-menu" id="labMenu">
-                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-1" target="_blank" rel="noopener">Lab 1 — cd, cat, ls terminal commands</a></li>
-                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-2" target="_blank" rel="noopener">Lab 2 — ChatServer</a></li>
-                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-3" target="_blank" rel="noopener">Lab 3 — Running JUnit through Shell Scripting</a></li>
-                <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-7" target="_blank" rel="noopener">Lab 7 — ListExamples</a></li>
-              </ul>
-          </div>
-        </footer>
+  <div class="card-footer no-logo">
+    <a class="btn" href="https://github.com/AshishBamba05/FinRisk.AI">View Repo</a>
+  </div>
+</div>
 
-      </article>
+<div class="project-card">
+   <span class="accent"></span>
+  <div class="card-top">
+    <h3>HistBytz</h3>
+    <div class="tags">
+      <span>React</span><span>Node</span><span>Express</span><span>Vite</span><span>CSS Animations</span>
+    </div>
+  </div>
+<div class="project-desc">
+  <p>
+    React + Node web app rendering 500+ years of U.S. history with optimized client-side
+    search, dynamic event loading, and CSS-driven animations.
+  </p>
+  </div>
+
+  <div class="card-footer no-logo">
+    <a class="btn" href="https://github.com/AshishBamba05/histbytz-app">View Repo</a>
+    <!-- Optional:
+    <a class="btn secondary" href="...">Live Demo</a>
+    -->
+  </div>
+</div>
+
+
+      <div class="project-card">
+  <div class="card-content">
+    <h3>AI/ML Public Starter-Kit</h3>
+     <span class="accent"></span>
+    <div class="tags">
+      <span>Python</span>
+      <span>Scikit-Learn</span>
+      <span>Pandas</span>
+      <span>Healthcare</span>
+    </div>
+    <div class="project-desc">
+    <p>
+      Public kit for TritonHacks 2025: stroke-risk classification with clear notebooks on
+      data handling, modeling, and evaluation (selected 1 of 3 developers).
+    </p>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <a class="btn" href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit">View Repo</a>
+    <img class="org-logo" src="csforeach_logo.jpeg" alt="TritonHacks logo">
+  </div>
+</div>
+
+
+<div class="project-card">
+  <span class="accent"></span>
+
+  <div class="card-top">
+    <h3>CSE15L (Software Tools & Techniques) Lab Projects</h3>
+    <div class="tags">
+      <span>Java</span>
+      <span>JUnit</span>
+      <span>Shell Scripting</span>
+    </div>
+  </div>
+
+  <div class="project-desc">
+    <p>
+      Developed proficiency with Linux, Git, and Bash to automate workflows,
+      manage version control, and debug software in collaborative environments.
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <div class="dropdown">
+      <button class="btn dropdown-toggle" id="labBtn">View Repos ▾</button>
+      <ul class="dropdown-menu" id="labMenu">
+        <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-1" target="_blank" rel="noopener">Lab 1 — cd, cat, ls terminal commands</a></li>
+        <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-2" target="_blank" rel="noopener">Lab 2 — ChatServer</a></li>
+        <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-3" target="_blank" rel="noopener">Lab 3 — Running JUnit through Shell Scripting</a></li>
+        <li><a href="https://github.com/AshishBamba05/CSE15L--Lab-7" target="_blank" rel="noopener">Lab 7 — ListExamples</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
     </div>
   </section>
 
-  <section id="recommendations" class="section-title">
-    <h2>Recommendations</h2>
-    <div id="recList">
-      <div class="recommendation">Excellent UI and strong React fundamentals!</div>
-      <div class="recommendation">Loved the data engineering work.</div>
-      <div class="recommendation">Clean code and good structure.</div>
-    </div>
-    <input type="text" id="newRec" placeholder="Add a new recommendation..." />
-    <button onclick="addRecommendation()">Submit</button>
-  </section>
+  <section id="contact-cta" class="cta-wrap">
+  <div class="cta-card">
+    <h2>Let's create something amazing together</h2>
+    <p>I'm open to new opportunities and collaborations. Feel free to reach out!</p>
 
-  <div id="homeIcon">🏠</div>
-  <div class="popup" id="popup">Recommendation submitted!</div>
+    <!-- Option A: mailto -->
+    <a class="cta-btn"
+       href="mailto:ashishvbamba@gmail.com?subject=Inquiry%20from%20your%20portfolio">
+      <span class="icon">✉️</span>
+      Get in Touch
+    </a>
 
-<script>
-  // ===== Terminal typing =====
-  const terminalText = `>
-
-I’m an undergrad junior at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from scalable backend systems to full-stack web apps — and I’m always looking for ways to bridge theory with execution.
-
-I started programming in high school through a Johns Hopkins Java program, which set the foundation for my CS journey. I’ve worked on projects ranging from personal apps like HistBytz (an interactive history explorer built with React/Node) to public-facing work like working as AI/ML Starter Kit Developer @ CS foreach, where I was selected as 1 of 3 developers to build a stroke predictor model on 5K+ patient records and mentored hackathon participants through model design and evaluation. These projects taught me how to balance technical depth with usability and deployment.
-
-Building on this momentum, I soon joined CSES E/Acc and contribute in multiple roles: as part of the ORCA research group, where we’re building a PyTorch-based instrument transposition tool that blends music and ML, and as a Technical Writer, where I break down AI + software topics into clear, accessible explainers for the student community. Both roles sharpened my ability to communicate complex systems while staying hands-on with engineering.
-
-I’m currently leveling up in full-stack development (e.g. React, Express, Node, SQL), system reliability, and applied ML (e.g. Scikit-Learn, PyTorch). I’m now seeking a summer internship for 2026 where I can apply my skills, ship meaningful products, and keep growing as an engineer.
-`;
-
-  const pre = document.getElementById('terminal-text');
-  const skipBtn = document.getElementById('skipBtn');
-  const restartBtn = document.getElementById('restart-btn');
-
-  let idx = 0;
-  let typing = true;
-  let timerId = null;
-
-  function typeWriter() {
-    if (!typing) return;
-    if (idx < terminalText.length) {
-      pre.textContent += terminalText.charAt(idx++);
-      timerId = setTimeout(typeWriter, 22);
-    }
-  }
-
-  function skipTyping() {
-    typing = false;
-    if (timerId) clearTimeout(timerId);
-    pre.textContent = terminalText;
-    skipBtn.style.display = 'none';
-  }
-
-  function restartTyping() {
-    typing = false;
-    if (timerId) clearTimeout(timerId);
-    // reset
-    pre.textContent = '';
-    idx = 0;
-    typing = true;
-    // show skip again in case it was hidden
-    skipBtn.style.display = '';
-    typeWriter();
-  }
-
-  skipBtn.addEventListener('click', skipTyping);
-  restartBtn.addEventListener('click', restartTyping);
-  window.addEventListener('load', typeWriter);
-
-  // ===== Recommendations =====
-  function addRecommendation() {
-    const input = document.getElementById("newRec");
-    const rec = input.value.trim();
-    if (rec) {
-      const div = document.createElement("div");
-      div.className = "recommendation";
-      div.textContent = rec;
-      document.getElementById("recList").appendChild(div);
-      input.value = "";
-      showPopup();
-    }
-  }
-  function showPopup() {
-    const popup = document.getElementById("popup");
-    popup.style.display = "block";
-    setTimeout(() => popup.style.display = "none", 2000);
-  }
-  // expose addRecommendation to inline onclick
-  window.addRecommendation = addRecommendation;
-
-  const btn = document.getElementById('labBtn');
-  const menu = document.getElementById('labMenu');
-
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  // Close dropdown if you click outside
-  document.addEventListener('click', () => {
-    menu.style.display = 'none';
-  });
-</script>
-
-<script>
-  const buttons = document.querySelectorAll('.filter-btn');
-  const badges  = document.querySelectorAll('.badge');
-
-  function applyFilter(key) {
-    badges.forEach(badge => {
-      if (key === 'all') { badge.hidden = false; return; }
-      const tags = (badge.dataset.tags || '').split(/\s+/);
-      badge.hidden = !tags.includes(key);
-    });
-  }
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      applyFilter(btn.dataset.filter);
-    });
-  });
-
-  // default: show all
-  applyFilter('all');
-  
-</script>
+    <!-- Option B: route to /contact
+    <a class="cta-btn" href="#contact"> <span class="icon">✉️</span> Get in Touch </a>
+    -->
+  </div>
+</section>
 </body>
 
 <footer class="site-footer">
@@ -1433,16 +404,5 @@ I’m currently leveling up in full-stack development (e.g. React, Express, Node
     <a href="https://github.com/AshishBamba05/Portfolio" target="_blank" rel="noopener"> View on GitHub</a>
   </div>
 </footer>
-
-<script>
-function adjustBodyPad(){
-  const f = document.querySelector('.site-footer');
-  if (!f) return;
-  const h = f.offsetHeight || 0;
-  document.body.style.paddingBottom = `calc(${h}px + env(safe-area-inset-bottom))`;
-}
-window.addEventListener('load', adjustBodyPad);
-window.addEventListener('resize', adjustBodyPad);
-</script>
 
 </html>
