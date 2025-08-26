@@ -253,6 +253,7 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   box-shadow: 0 8px 20px rgba(0,0,0,0.45);
   overflow: hidden;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  
   color: #c5f7e7;
   position: relative;
   margin-top: 20px;
@@ -711,6 +712,14 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   padding: 16px;
   display: flex;
   flex-direction: column;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 100px;
+  line-height: 20px;
+  overflow: hidden;
+
+  animation: floatProject 3s ease-in-out infinite;
+
 }
 
 
@@ -751,7 +760,7 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   margin:0; font-size:1.15rem; letter-spacing:.2px; color:#fff;
 }
 
-.project-card .tags{ display:flex; gap:8px; flex-wrap:wrap; }
+.project-card .tags{ display:flex; gap:8px; flex-wrap:wrap;}
 .project-card .tags span{
   font-size:.72rem; color:#cfd3d8; background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12); padding:4px 8px; border-radius:999px;
@@ -791,6 +800,14 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   padding:6px;
 }
 
+.org-logo:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  border-color: #3b82f6;
+  box-shadow: 0 12px 30px rgba(59,130,246,.45);
+}
+
 :root{
   --title-tags-gap: 14px;   
   --tags-desc-gap: 12px;  
@@ -800,10 +817,19 @@ nav a:hover { text-decoration: underline; font-style: italic; }
 
 .project-card .tags{
   margin-top: var(--title-tags-gap) !important;
+  font-family: serif;
+  font-weight: 600;   
 }
 
 .project-card .tags + p{
   margin-top: var(--tags-desc-gap) !important;
+}
+
+.project-card .tags span,
+.project-card .tags span * {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
 }
 
 .project-desc {
@@ -832,10 +858,6 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   100% { transform: translate3d(0, 0, 0); }
 }
 
-.project-card {
-  animation: floatProject 3s ease-in-out infinite;
-}
-
 .project-card:hover .project-desc,
 .project-card.typing .project-desc{
   border-color: rgba(0,60,200,.95);
@@ -861,6 +883,22 @@ nav a:hover { text-decoration: underline; font-style: italic; }
 }
 .project-card.typing .project-desc .caret{ display:block; }
 
+
+.project-card .project-desc {
+  font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', sans-serif; 
+  font-size: 16px;              /* smaller than titles, bigger than tags */
+  line-height: 1.5;             /* more breathing room, easier to scan */
+  font-weight: 400;             /* normal weight, balanced */
+  margin-top: 8px;
+
+  color: #e6e6e6;
+  opacity: 0.95;
+
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
 @keyframes blink { 50% { opacity:0; } }
 
 
@@ -883,10 +921,9 @@ nav a:hover { text-decoration: underline; font-style: italic; }
     background .18s ease,
     color .18s ease;
   will-change: transform, box-shadow;
-  transform: translateZ(0);   /* avoids jitter */
+  transform: translateZ(0);   
 }
 
-/* Hover / focus: pop + glow in orange */
 .project-card .tags span:hover,
 .project-card .tags span:focus-visible,
 .course-tags span:hover,
@@ -896,11 +933,9 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   transform: translateY(-2px) scale(1.06);
   border-color: var(--tag-pop-1);
   color: #fff;
-  /* subtle orange tint without changing size */
   background:
     radial-gradient(120% 140% at 30% 20%, color-mix(in srgb, var(--tag-pop-1) 28%, transparent) 0%, transparent 60%),
     rgba(255,255,255,0.06);
-  /* outer glow + inner ring */
   box-shadow:
     0 8px 22px color-mix(in srgb, var(--tag-pop-1) 32%, transparent),
     0 0 0 1px color-mix(in srgb, var(--tag-pop-1) 80%, transparent) inset,
@@ -970,24 +1005,19 @@ nav a:hover { text-decoration: underline; font-style: italic; }
 
 /*START OF RECOMMENDATIONS CODE*/
 :root{
-  --cta-bg1:#000000; 
-  --cta-bg2:#121212;
-  --cta-txt:#f3f3f3;
-  --cta-sub:#bcbcbc;
-  --cta-btn-bg: #2563eb; 
-
+  --cta-bg1: #000000;
+  --cta-bg2: #121212;
+  --cta-txt: #f3f3f3;
+  --cta-sub: #bcbcbc;
+  --cta-btn-bg: #2563eb;  
+  --cta-btn-txt: #ffffff; 
+  --cta-radius: 24px;     
 }
 
 #contact-cta.cta-wrap{
   padding: clamp(40px, 6vw, 72px) 16px;
 }
 
-#contact-cta .cta-card {
-  background: #000000;  
-  color: var(--cta-txt);
-  border-radius: var(--cta-radius);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
-}
 
 #contact-cta .cta-card::after{
   content:"";
@@ -997,56 +1027,91 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   pointer-events:none;
 }
 
-#contact-cta h2{
-  margin: 0 0 16px;
-  font-size: 25px;
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: .2px;
-}
 #contact-cta p{
   margin: 0 0 28px;
-  color: var(--cta-sub);
-  font-size: clamp(16px, 2.4vw, 22px);
+  color: #fff;
   line-height: 1.6;
 }
 
 #contact-cta .cta-btn{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 22px;
-  border-radius: 999px;
-  background: var(--cta-btn-bg);
-  color: var(--cta-btn-txt);
-  font-weight: 800;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  padding: 14px 22px !important;
+  border-radius: 999px !important;
+  background: var(--cta-btn-bg) !important;
+  color: var(--cta-btn-txt) !important;
+  font-weight: 700 !important;
   text-decoration: none;
   box-shadow:
     0 6px 18px rgba(0,0,0,0.35),
-    inset 0 2px 0 rgba(255,255,255,0.35);
-  transform: translateZ(0); 
-  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+    inset 0 2px 0 rgba(255,255,255,0.35) !important;
+  transform: translateZ(2) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
 }
+
+#contact-cta .cta-card:hover {
+  transform: scale(1.02); 
+  box-shadow: 
+  0 16px 48px rgba(0,0,0,0.6),
+  0 0 25px rgba(255,140,0,0.9),
+  0 0 45px rgba(255,140,0,0.7);
+
+}
+
 #contact-cta .cta-btn:hover{
-  transform: translateY(-2px);
-  filter: brightness(1.05);
-  box-shadow:
-    0 10px 26px rgba(0,0,0,0.45),
-    inset 0 2px 0 rgba(255,255,255,0.45);
+  transform: scale(1.25);
 }
-#contact-cta .cta-btn:active{
-  transform: translateY(0);
-}
+
 #contact-cta .cta-btn .icon{
   font-size: 1.15em;
 }
 
 @media (max-width: 640px){
-  #contact-cta .cta-card{ text-align: center; }
-  #contact-cta .cta-btn{ justify-content: center; width: auto; }
+  #contact-cta .cta-btn{ width: auto; }
 }
 
+
+#contact-cta .cta-card{
+  background: #000;                   
+  color: var(--cta-txt);
+  border-radius: var(--cta-radius);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+  position: relative;               
+  max-width: 5000px;
+  margin: 0 auto;                     
+  padding: clamp(32px, 6vw, 64px);
+  text-align: center;                
+  font-family: 'Poppins','Segoe UI','Helvetica Neue',Arial,sans-serif;
+}
+
+
+#contact-cta .cta-card p.cta-typed,
+#contact-cta .cta-card p.cta-typed span {
+  font-size: 50px !important;
+  line-height: 1.6;
+  color: #fff;
+  font-weight: 40;
+}
+
+#contact-cta .cta-card p.cta-heading,
+#contact-cta .cta-card p.cta-heading span {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 700;   /* bold */
+  color: #fff;
+}
+
+@media (max-width:768px){
+    #contact-cta .cta-card p.cta-typed,
+#contact-cta .cta-card p.cta-typed span {
+    font-size: 20px !important;
+}
+}
 /*END OF RECOMMENDATIONS CODE*/ 
+
+
+
 
 
 /* --- Mobile: ensure buttons are fully visible inside terminal --- */
@@ -1202,6 +1267,6 @@ nav a:hover { text-decoration: underline; font-style: italic; }
     margin-top: 10px !important;
   }
   #projects h2 {
-  margin-bottom: -5px !important; /* shrink spacing under title */
+  margin-bottom: -5px !important; 
 }
 }

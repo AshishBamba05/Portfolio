@@ -164,3 +164,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+new Typed(".cta-typed", {
+  strings: [
+    "Let's connect and code!",
+    "I'm open to new opportunities and collaborations. Feel free to reach out!"
+  ],
+  typeSpeed: 40,
+  backSpeed: 0,
+  showCursor: false
+});
