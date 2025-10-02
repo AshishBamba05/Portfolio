@@ -26,7 +26,7 @@ function toggle(){
   // ===== Terminal typing =====
   const terminalText = `>
 
-I’m an undergrad junior at UC San Diego studying Math and Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from scalable backend systems to full-stack web apps — and I’m always looking for ways to bridge theory with execution.
+I’m an undergrad junior at UC San Diego studying Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from scalable backend systems to full-stack web apps — and I’m always looking for ways to bridge theory with execution.
 
 I started programming in high school through a Johns Hopkins Java program, which set the foundation for my CS journey. I’ve worked on projects ranging from personal apps like HistBytz (an interactive history explorer built with React/Node) to public-facing work like working as AI/ML Starter Kit Developer @ CS foreach, where I was selected as 1 of 3 developers to build a stroke predictor model on 5K+ patient records and mentored hackathon participants through model design and evaluation. These projects taught me how to balance technical depth with usability and deployment.
 
