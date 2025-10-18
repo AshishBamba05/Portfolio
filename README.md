@@ -1,5 +1,3 @@
-# Portfolio
-
 # Personal Portfolio
 
 Live site: https://abamba-portfolio.netlify.app/
