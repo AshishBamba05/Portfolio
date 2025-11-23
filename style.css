@@ -1270,3 +1270,367 @@ nav a:hover { text-decoration: underline; font-style: italic; }
   margin-bottom: -5px !important; 
 }
 }
+
+#experience {
+  margin-top: 2.5rem;
+}
+
+.experience-board {
+  background: #060606;
+  border-radius: 18px;
+  padding: 1.8rem 1.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.85);
+  color: #f5f5f5;
+}
+
+.experience-item {
+  display: flex;
+  gap: 1.6rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+}
+
+.experience-item:first-child {
+  padding-top: 0.3rem;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0.2rem;
+}
+
+.exp-left {
+  width: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.exp-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.exp-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.exp-logo-red {
+  background: #991b1b;
+}
+
+.exp-line {
+  flex: 1;
+  margin-top: 0.5rem;
+  width: 2px;
+  background: linear-gradient(to bottom, #4b5563, #6b7280, #4b5563);
+  opacity: 0.9;
+  border-radius: 999px;
+}
+
+.exp-right {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+}
+
+/* company row */
+.exp-org-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.org-bordered {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 0.55rem 0.85rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.exp-org-name,
+.org-bordered .exp-org-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.exp-org-meta {
+  display: none;
+}
+
+.exp-org-duration,
+.org-bordered .exp-org-duration {
+  font-size: 0.8rem;
+  color: #c4c4c4;
+  white-space: nowrap;
+}
+
+/* roles */
+.exp-role-block {
+  margin-top: 0.2rem;
+  background: transparent;
+}
+
+.exp-role {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-top: 0.9rem;
+}
+
+.exp-role:first-of-type {
+  margin-top: 0.4rem;
+}
+
+.exp-role::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 2px solid #9ca3af;
+  background: #060606;
+}
+
+.exp-role-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.exp-role-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.exp-role-dates {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* bullets + skills */
+.exp-bullets {
+  margin: 0.45rem 0 0.55rem;
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+
+.exp-bullets li {
+  margin-bottom: 0.25rem;
+}
+
+.exp-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+.exp-skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.exp-skill-pill {
+  font-size: 0.72rem;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(249, 250, 251, 0.08);
+  border: 1px solid rgba(209, 213, 219, 0.35);
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .experience-board {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .experience-item {
+    gap: 1.1rem;
+  }
+
+  .exp-left {
+    width: 80px;
+  }
+
+  .exp-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .exp-org-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .exp-org-duration {
+    margin-top: 0.1rem;
+  }
+
+  .org-bordered {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .org-bordered .exp-org-duration {
+    margin-top: 0.15rem;
+  }
+
+  .exp-bullets {
+    font-size: 0.82rem;
+  }
+}
+
+/* Smooth hover transitions for logos + skill pills */
+.exp-logo,
+.exp-skill-pill {
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    border-color 0.18s ease-out,
+    background-color 0.18s ease-out;
+  cursor: pointer;
+}
+
+/* Hover: orange glow + slight size bump */
+.exp-logo:hover,
+.exp-skill-pill:hover {
+  transform: scale(1.2);
+  border-color: #f97316; /* orange */
+  box-shadow:
+    0 0 0 1px rgba(249, 115, 22, 0.7),
+    0 0 18px rgba(249, 115, 22, 0.45);
+}
+
+/* Slight background lift for skills to make glow pop more */
+.exp-skill-pill:hover {
+  background-color: rgba(249, 115, 22, 0.12);
+}
+
+
+
+/* ==== Experience: GitHub repo attachment card ==== */
+
+.exp-link-card {
+  margin-top: 0.9rem;
+}
+
+.exp-link-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.85);
+  text-decoration: none;
+  color: #e5e7eb;
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    border-color 0.18s ease-out,
+    background-color 0.18s ease-out;
+}
+
+.exp-link-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #020617;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-link-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #e5e7eb;
+}
+
+.exp-link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.exp-link-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exp-link-sub {
+  font-size: 0.78rem;
+  color: #9ca3af;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exp-link-external {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Hover: orange glow + slight scale, consistent with your theme */
+.exp-link-inner:hover {
+  transform: scale(1.03);
+  border-color: #f97316;
+  box-shadow:
+    0 0 0 1px rgba(249, 115, 22, 0.7),
+    0 0 22px rgba(249, 115, 22, 0.45);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+.exp-link-inner:hover .exp-link-label {
+  color: #fefce8;
+}
+
+.exp-link-inner:hover .exp-link-external {
+  color: #fed7aa;
+}
+
+@media (max-width: 768px) {
+  .exp-link-inner {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .exp-link-label {
+    font-size: 0.82rem;
+  }
+
+  .exp-link-sub {
+    font-size: 0.76rem;
+  }
+}
+
+/* Pull orange section titles slightly left */
+#course.section-title > h2,
+#skills.section-title > h2,
+#projects.section-title > h2 {
+  margin-left: -3rem;   /* tweak: -1rem or -2rem if you want more/less */
+}

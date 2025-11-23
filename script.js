@@ -26,13 +26,16 @@ function toggle(){
   // ===== Terminal typing =====
   const terminalText = `>
 
-I’m an undergrad junior at UC San Diego studying Computer Science, also pursuing a minor in Cognitive Science (spec. Neural Computation & Machine Learning). I love building software that actually works — from scalable backend systems to full-stack web apps — and I’m always looking for ways to bridge theory with execution.
+I’m an undergraduate junior studying Computer Science, also pursuing a Cognitive Science minor (spec. Machine Learning). 
 
-I started programming in high school through a Johns Hopkins Java program, which set the foundation for my CS journey. I’ve worked on projects ranging from personal apps like HistBytz (an interactive history explorer built with React/Node) to public-facing work like working as AI/ML Starter Kit Developer @ CS foreach, where I was selected as 1 of 3 developers to build a stroke predictor model on 5K+ patient records and mentored hackathon participants through model design and evaluation. These projects taught me how to balance technical depth with usability and deployment.
+Back in high school, I was accepted into the Johns Hopkins Center for Talented Youth CS program, where I learned how to turn abstract ideas into practical, working software. That foundation carried forward as I began tackling larger, more impact-driven problems.
 
-Building on this momentum, I soon joined CSES E/Acc and contribute in multiple roles: as part of the ORCA research group, where we’re building a PyTorch-based instrument transposition tool that blends music and ML, and as a Technical Writer, where I break down AI + software topics into clear, accessible explainers for the student community. Both roles sharpened my ability to communicate complex systems while staying hands-on with engineering.
+Fast forward to summer 2025, I worked as a software developer at Vikmere Software Inc., where I redesigned a core backend workflow for a client’s dining reservation platform, strengthening reliability and improving the overall experience for their customers. From there, I continued pushing into projects that blend usability, performance, and clean system design.
 
-I’m currently leveling up in full-stack development (e.g. React, Express, Node, SQL), system reliability, and applied ML (e.g. Scikit-Learn, PyTorch). I’m now seeking a summer internship for 2026 where I can apply my skills, ship meaningful products, and keep growing as an engineer.
+Parallel to full-stack work, I doubled down on AI/ML systems at UCSD. I led CS foreach as 1 of 3 AI/ML starter-kit developers, where I built reproducible Scikit-Learn kits to teach supervied ML concepts to 250+ students across different computer science orgs and high-schools. I've also recently joined CSES Innovate as a researcher and am exploring the interserction of Machine Learning and Music, securing awards at SoCal AI Responsibility Summit (SAIRS 2025) and San Diego Tech Conference (SDTC).
+
+I’m currently seeking opportunities to level up in my full-stack career.
+
 `;
 
   const pre = document.getElementById('terminal-text');
