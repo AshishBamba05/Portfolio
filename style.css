@@ -1634,3 +1634,60 @@ nav a:hover { text-decoration: underline; font-style: italic; }
 #projects.section-title > h2 {
   margin-left: -3rem;   /* tweak: -1rem or -2rem if you want more/less */
 }
+
+
+
+.skills-simple {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skill-card-simple:last-child {
+  grid-column: span 2;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 12px;
+}
+
+
+.skills-simple {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.skill-card-simple {
+  width: 100%;
+}
+
+.skills-simple > .skill-card-simple {
+  grid-column: auto !important;
+}
+
+.skills-simple {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 60px; /* was 24px → increase this */
+}
+
+
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 14px; /* vertical + horizontal spacing */
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 14px;
+}
+
+.badge {
+  width: 100%;
+  text-align: center;
+}

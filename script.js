@@ -26,15 +26,13 @@ function toggle(){
   // ===== Terminal typing =====
   const terminalText = `>
 
-I’m an undergraduate junior studying Computer Science, also pursuing a Cognitive Science minor (spec. Machine Learning). 
+I’m an undergraduate junior at UC San Diego studying Computer Science, also pursuing a Cognitive Science (spec. Machine Learning) minor. I’m always looking for ways to bridge code with context, ideas with impact, and computing skills with social good. 
 
-Back in high school, I was accepted into the Johns Hopkins Center for Talented Youth CS program, where I learned how to turn abstract ideas into practical, working software. That foundation carried forward as I began tackling larger, more impact-driven problems.
+I’ve worked across the stack, shipping games, fintech dashboards, study tools, and hackathon starter-kits with a target audience in the back of my mind. While I’ve independently strengthened my problem-solving skills through driving projects from vision to completion, I also operate efficiently in collaborative, team-based Agile settings. During my Software Development Engineering (SDE) internship at Vikmere Software Inc., I functioned in a team to redesign a core backend workflow for a client’s dining reservation platform, strengthening reliability and improving the overall experience for their customers. 
 
-Fast forward to summer 2025, I worked as a software developer at Vikmere Software Inc., where I redesigned a core backend workflow for a client’s dining reservation platform, strengthening reliability and improving the overall experience for their customers. From there, I continued pushing into projects that blend usability, performance, and clean system design.
+Parallel to full-stack work, I doubled down on AI/ML systems at UCSD. I led CS foreach as 1 of 3 AI/ML starter-kit developers, where I built reproducible Scikit-Learn kits to accelerate TritonHacks '25 onboarding. Going ahead, I've also joined a research lab in CSES Innovate, where I'm building a neural network architecture to automate Instrument Transposition. As of now, our research lab has secured awards at SoCal AI Responsibility Summit (SAIRS 2025) and San Diego Tech Conference (SDTC).
 
-Parallel to full-stack work, I doubled down on AI/ML systems at UCSD. I led CS foreach as 1 of 3 AI/ML starter-kit developers, where I built reproducible Scikit-Learn kits to teach supervied ML concepts to 250+ students across different computer science orgs and high-schools. I've also recently joined CSES Innovate as a researcher and am exploring the interserction of Machine Learning and Music, securing awards at SoCal AI Responsibility Summit (SAIRS 2025) and San Diego Tech Conference (SDTC).
-
-I’m currently seeking opportunities to level up in my full-stack career.
+I’m currently seeking opportunities to level up in my programming career. 
 
 `;
 
