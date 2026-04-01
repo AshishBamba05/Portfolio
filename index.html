@@ -3,613 +3,274 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ashish V Bamba Portfolio Page</title>
-  
+  <meta name="color-scheme" content="light dark" />
+  <meta
+    name="description"
+    content="Ashish V. Bamba portfolio featuring software engineering, machine learning, research, and project experience."
+  />
+  <title>Ashish V. Bamba | Software Engineer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Lora:wght@400;700&family=Crimson+Pro:wght@400;600&family=Roboto+Slab:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
-  <header>
-    <div id="name">Ashish V Bamba Portfolio</div>
-    <nav>
+  <div class="theme-picker floating-toggle" id="themePicker">
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Open theme palette"
+      aria-expanded="false"
+      aria-controls="themeMenu"
+    >
+      Palette
+    </button>
+    <div class="theme-menu" id="themeMenu" role="menu" aria-label="Theme palette">
+      <button class="theme-option" type="button" role="menuitemradio" data-theme-choice="auto">Auto</button>
+      <button class="theme-option" type="button" role="menuitemradio" data-theme-choice="midnight">Midnight</button>
+      <button class="theme-option" type="button" role="menuitemradio" data-theme-choice="slate">Slate</button>
+      <button class="theme-option" type="button" role="menuitemradio" data-theme-choice="sand">Sand</button>
+      <button class="theme-option" type="button" role="menuitemradio" data-theme-choice="forest">Forest</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-actions">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">
+        Menu
+      </button>
+    </div>
+
+    <nav class="site-nav" id="siteNav" aria-label="Primary">
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#course">Relevant Coursework</a>
       <a href="#skills">Skills</a>
-      <a href="#projects">Project Details</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="banner-container">
-    <img src="bg.png" alt="Banner Image" class="banner-image" />
-  </div>
+  <main id="top">
+    <section class="hero" id="about">
+      <div class="hero-copy">
+        <div class="hero-section-kicker">About</div>
+        <p class="hero-intro">Hi! I'm</p>
+        <h1>Ashish Bamba.</h1>
+        <p class="hero-subtitle">
+          <span class="hero-subtitle-lead">Computer Science student at UC San Diego building backend systems, full-stack products, and applied ML work.</span>
+          <span class="hero-subtitle-note">Looking for strong engineering teams where I can contribute early and keep growing.</span>
+        </p>
 
-  <section id="about" class="section-container">
-    <div class="about-container">
-      <img src="a.png" alt="Profile Image" class="profile-pic" />
-      <div class="about-text">
-        <h2>About Me</h2>
-        <h1>Hi, I'm Ashish Bamba! 👋</h1>
-        <div class="contact-icons" aria-label="Social links">
-  <a class="icon email" href="mailto:ashishvbamba@gmail.com">
-    <svg viewBox="0 0 24 24" class="ico" aria-hidden="true">
-      <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/>
-    </svg>
-    <span class="sr-only">Email</span>
-  </a>
-
-  <a class="icon linkedin" href="https://www.linkedin.com/in/ashishbamba/" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" class="ico" aria-hidden="true">
-      <path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3zM14.5 9c-2.09 0-3.5 1.14-3.5 2.92V21h-4V9h4v1.65S12 9 14.9 9C18 9 19 11.02 19 14.2V21h-4v-6c0-1.44-.53-2-1.5-2Z"/>
-    </svg>
-    <span class="sr-only">LinkedIn</span>
-  </a>
-
-  <a class="icon github" href="https://github.com/AshishBamba05" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" class="ico" aria-hidden="true">
-      <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.61-3.37-1.19-3.37-1.19-.46-1.16-1.12-1.47-1.12-1.47-.92-.63.07-.62.07-.62 1.01.07 1.55 1.05 1.55 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .85-.27 2.78 1.02A9.7 9.7 0 0 1 12 7.07c.86 0 1.72.12 2.53.36 1.93-1.29 2.78-1.02 2.78-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .26.18.58.69.48A10 10 0 0 0 12 2Z"/>
-    </svg>
-    <span class="sr-only">GitHub</span>
-  </a>
-</div>
-
-
-<div class="terminal-window">
-  <div class="terminal-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-  </div>
-    <div class="terminal-body">
-      <pre id="terminal-text" aria-live="polite"></pre>
-        <div class="button-bar">
-          <button class="tbtn" id="restart-btn">Restart Typing</button>
-          <button class="tbtn" id="skipBtn" aria-label="Skip typing animation">Skip</button>
-        </div>
-    </div>
-  </div>
-  </section>
-
-<section id="experience" class="section-title">
-  <h2>Experience</h2>
-
-  <div class="experience-board">
-    <article class="experience-item">
-      <div class="exp-left">
-      <div class="exp-logo">
-        <img src="cses.jpeg" alt="CSES E/Acc logo">
-      </div>
-      <div class="exp-line"></div>
-    </div>
-
-      <div class="exp-right">
-        <header class="exp-org-header org-bordered">
-          <div>
-            <h3 class="exp-org-name">CSES Innovate</h3>
-            <div class="exp-org-meta">UC San Diego · Student Organization</div>
-          </div>
-          <div class="exp-org-duration">Apr 2025 – Present · 8 mos</div>
-        </header>
-
-        <div class="exp-role-block">
-          <div class="exp-role">
-            <div class="exp-role-header">
-              <div class="exp-role-title">Technical Writer | AI & Software Topics</div>
-              <div class="exp-role-dates">Apr 2025 – Present · 8 mos</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Drove TechTalks podcast launch, translating 15+ interviews (incl. Google & OpenArt guests) into long-form, publish-ready articles.</li>
-              <li>Coordinated with engineers, PMs, and designers to capture accurate technical detail while keeping content accessible.</li>
-            </ul>
-            <div class="exp-skill-row">
-              <span class="exp-skill-pill">Cross-functional Team Leadership</span>
-              <span class="exp-skill-pill">Technical Writing</span>
-            </div>
-          </div>
-
-          <div class="exp-role">
-            <div class="exp-role-header">
-              <div class="exp-role-title">Undergraduate Researcher - Machine Learning Development</div>
-              <div class="exp-role-dates">Apr 2025 – Present · 8 mos</div>
-            </div>
-            <ul class="exp-bullets">
-              <li> ⁠Built modular, AI-driven platform in Python, enabling E2E translation between audio, symbolic notation, & sheet music, securing awards at SoCal AI Responsibility Summit (SAIRS 2025) and San Diego Tech Conference (SDTC)</li>
-              <li>Engineering a sequence-to-sequence (seq2seq) hybrid architecture solution for Instrument Transposition (IT) by pairing a deterministic pre-filter with transformer encoder–decoder model to generate target-instrument MIDI</li>
-            </ul>
-            <div class="exp-skill-row">
-              <span class="exp-skill-pill">Python</span>
-              <span class="exp-skill-pill">Machine Learning</span>
-              <span class="exp-skill-pill">Transformers</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="experience-item">
-      <div class="exp-left">
-      <div class="exp-logo">
-        <img src="vikmere.jpeg" alt="Vikmere Software logo">
-      </div>
-      <div class="exp-line"></div>
-    </div>
-
-      <div class="exp-right">
-        <header class="exp-org-header org-bordered">
-          <div>
-            <h3 class="exp-org-name">Vikmere Software Inc.</h3>
-          </div>
-          <div class="exp-org-duration">Jun 2025 – Sep 2025 · 4 mos</div>
-        </header>
-
-        <div class="exp-role-block">
-          <div class="exp-role">
-            <div class="exp-role-header">
-              <div class="exp-role-title">Software Engineer Intern</div>
-              <div class="exp-role-dates">Los Angeles County, CA · On-site</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Architected backend workflows (using Java microservices & React.js) to revamp client's dining reservation platform, leveraging Cloud SQL (GCP) for scalable data storage, enabling search and real-time bookings for 1000+ diners</li>
-              <li>Built high-throughput REST APIs with sub-100ms search latency (reduced 43\%) via caching & query optimization. Enabled reliable high-traffic flow, decreasing conflicts 96%, via client authorization & client/server-side validation</li>
-            </ul>
-            <div class="exp-skill-row">
-              <span class="exp-skill-pill">Java</span>
-              <span class="exp-skill-pill">ReactJS</span>
-              <span class="exp-skill-pill">REST APIs</span>
-              <span class="exp-skill-pill">GCP Cloud SQL</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </article>
-
-   <article class="experience-item">
-  <div class="exp-left">
-    <div class="exp-logo">
-      <img src="csforeach.jpeg" alt="CS foreach logo">
-    </div>
-    <div class="exp-line"></div>
-  </div>
-
-  <div class="exp-right">
-    <header class="exp-org-header org-bordered">
-      <div>
-        <h3 class="exp-org-name">CS foreach</h3>
-      </div>
-      <div class="exp-org-duration">Feb 2025 – May 2025 · 4 mos</div>
-    </header>
-
-    <div class="exp-role-block">
-      <div class="exp-role">
-        <div class="exp-role-header">
-          <div class="exp-role-title">AI/ML Starter-Kit Developer</div>
-          <div class="exp-role-dates">San Diego, CA</div>
-        </div>
-
-        <ul class="exp-bullets">
-          <li>Led end-to-end development of 2 Python-based ML modules for TritonHacks, accelerating model development through building 4+ modular implementations (covering KNN, Logistic Regression, Random Forest, and MLP)</li>
-          <li>Built reproducible ML data pipelines for ingestion, cleaning, and analysis using Pandas, scikit-learn, & Seaborn, packaged with evaluation templates (precision, recall, AUC-ROC), improving model development and efficiency</li>
-          <li>Led 3 weekly workshops and 2 labs to mentor 120+ students, teaching core supervised ML concepts, presenting code walk-throughs, and imparting best practices for model training, validation strategy, and error analysis</li>
-        </ul>
-
-        <div class="exp-skill-row">
-          <span class="exp-skill-pill">Python</span>
-          <span class="exp-skill-pill">Scikit-Learn</span>
-          <span class="exp-skill-pill">Pandas</span>
-          <span class="exp-skill-pill">Seaborn</span>
-          <span class="exp-skill-pill">Supervised ML</span>
-          <span class="exp-skill-pill">Education</span>
-        </div>
-
-        <!-- ✨ GitHub repo attachment card -->
-        <div class="exp-link-card">
-          <a class="exp-link-inner"
-             href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit"
-             target="_blank" rel="noopener">
-            <div class="exp-link-icon">
-              <!-- simple GitHub mark -->
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8.2 11.2.6.1.8-.2.8-.5v-1.9c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1 1.7.8 2 .6.1-.7.4-1.2.7-1.5-2.6-.3-5.4-1.4-5.4-6 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 2.9 1.1a10 10 0 0 1 5.3 0c2-1.4 2.9-1.1 2.9-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.6-2.8 5.6-5.4 5.9.4.3.8 1 .8 2.1v3.1c0 .3.2.7.8.5a11.6 11.6 0 0 0 8.3-11.2A11.5 11.5 0 0 0 12 .5Z"/>
-              </svg>
-            </div>
-            <div class="exp-link-text">
-              <div class="exp-link-label">GitHub · TritonHacks Starter Kit</div>
-              <div class="exp-link-sub">TritonHacks2025-ML-starter-kit</div>
-            </div>
-            <span class="exp-link-external">↗</span>
+        <div class="hero-actions icon-links">
+          <a class="icon-link" href="mailto:ashishvbamba@gmail.com" aria-label="Email Ashish">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 5.75A2.75 2.75 0 0 1 5.75 3h12.5A2.75 2.75 0 0 1 21 5.75v12.5A2.75 2.75 0 0 1 18.25 21H5.75A2.75 2.75 0 0 1 3 18.25Zm2.2.25L12 11.14 18.8 6Zm13.8 1.55-6.55 4.96a.75.75 0 0 1-.9 0L5 7.55v10.7c0 .3.25.55.55.55h12.9c.3 0 .55-.25.55-.55Z"/>
+            </svg>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/ashishbamba/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.94 8.5A1.56 1.56 0 1 0 6.93 5.4a1.56 1.56 0 0 0 .01 3.1ZM5.6 9.75h2.67v8.65H5.6zm4.35 0h2.55v1.18h.03c.35-.67 1.22-1.38 2.5-1.38 2.68 0 3.17 1.76 3.17 4.05v4.8h-2.66v-4.25c0-1.01-.02-2.32-1.42-2.32-1.42 0-1.64 1.1-1.64 2.24v4.33H9.95z"/>
+            </svg>
+          </a>
+          <a class="icon-link" href="https://github.com/AshishBamba05" target="_blank" rel="noopener" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15.98 1.7 2.58 1.2 3.2.92.1-.72.39-1.2.7-1.48-2.47-.28-5.06-1.24-5.06-5.5 0-1.22.43-2.22 1.15-3-.12-.28-.5-1.43.1-2.98 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.13-1.44 3.07-1.14 3.07-1.14.6 1.55.22 2.7.11 2.98.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.21-5.08 5.49.4.35.74 1.02.74 2.05v3.04c0 .3.2.65.77.54A11.25 11.25 0 0 0 12 .75"/>
+            </svg>
           </a>
         </div>
-        <!-- end GitHub repo card -->
 
-      </div>
-    </div>
-  </div>
-</article>
-
-
-    <article class="experience-item">
-      <div class="exp-left">
-        <div class="exp-logo exp-logo-red">
-          <img src="cedars.jpeg" alt="CS foreach logo">
+        <div class="hero-facts">
+          <span>UC San Diego</span>
+          <span>Backend + Full Stack</span>
+          <span>AI/ML</span>
         </div>
-        <div class="exp-line"></div>
       </div>
 
-      <div class="exp-right">
-        <header class="exp-org-header org-bordered">
-          <div>
-            <h3 class="exp-org-name">Cedars Sinai</h3>
+      <aside class="hero-aside">
+        <div class="portrait-card">
+          <img src="B7E0B901-5C66-4824-9FAD-54E4A6C5C1D9.jpg" alt="Portrait of Ashish V. Bamba" class="portrait" />
+        </div>
+      </aside>
+    </section>
+
+    <section class="section compact-section" id="skills">
+      <div class="section-kicker">Skills</div>
+      <div class="compact-grid compact-grid-single">
+        <article class="compact-card reveal">
+          <div class="skills-list">
+            <p><strong>Languages:</strong> Python, Java, C, C++, JavaScript, TypeScript, SQL, HTML/CSS</p>
+            <p><strong>Web &amp; Frameworks:</strong> React.js, Node.js, Express.js, Konva.js, WebSockets, REST APIs, Postman</p>
+            <p><strong>Data &amp; ML:</strong> Scikit-Learn, NumPy, Pandas, SciPy, PyTorch, Matplotlib, Seaborn</p>
+            <p><strong>Cloud &amp; DevOps:</strong> Google Cloud Platform (GCP), Docker, Kubernetes, GitHub Actions (CI/CD), Heroku</p>
+            <p><strong>Tools &amp; Datastores:</strong> Codex, Claude, Copilot, PostgreSQL (Supabase), MS-SQL, MySQL, MongoDB (Mongoose), NoSQL, Git</p>
           </div>
-          <div class="exp-org-duration">Jun 2022 – Aug 2022 · 3 mos</div>
-        </header>
+        </article>
+      </div>
+    </section>
 
-        <div class="exp-role-block">
-          <div class="exp-role">
-            <div class="exp-role-header">
-              <div class="exp-role-title">Clinical Assistant, Neurology Dept.</div>
-              <div class="exp-role-dates">Los Angeles, CA</div>
-            </div>
-            <ul class="exp-bullets">
-              <li>Logged 30+ hours of clinical support, managing ICU emergency cart inventory and assisting with critical supply access.</li>
-              <li>Helped streamline intake and discharge documentation for 100+ patients, reducing processing time through better coordination.</li>
-            </ul>
-            <div class="exp-skill-row">
-              <span class="exp-skill-pill">Patient Support</span>
-              <span class="exp-skill-pill">Documentation</span>
-              <span class="exp-skill-pill">Collaboration</span>
+    <section class="section" id="experience">
+      <div class="section-kicker">Experience</div>
+      <div class="section-heading-row">
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <p class="timeline-date">Apr 2025 - Present</p>
+            <div class="timeline-logo">
+              <img src="cses.jpeg" alt="CSES Innovate logo" />
             </div>
           </div>
+          <div class="timeline-content">
+            <h3>Undergraduate Researcher, Machine Learning Development</h3>
+            <p class="timeline-org">CSES Innovate · UC San Diego</p>
+            <p class="timeline-summary">
+              Engineering a Python-based instrument transposition pipeline powered by neural networks within a broader end-to-end translation system for audio, sheet music, and symbolic notation.
+            </p>
+            <p class="stack-line">Python · Transformers · ML Systems</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <p class="timeline-date">Jun 2025 - Sep 2025</p>
+            <div class="timeline-logo">
+              <img src="vikmere.jpeg" alt="Vikmere Software logo" />
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h3>Software Engineer Intern</h3>
+            <p class="timeline-org">Vikmere Software Inc.</p>
+            <p class="timeline-summary">
+              Built backend workflows and API improvements for dining reservation platform serving 1,000+ diners.
+            </p>
+            <p class="stack-line">Java · React · REST APIs · GCP Cloud SQL</p>
+          </div>
+        </article>
+
+        <article class="timeline-item reveal">
+          <div class="timeline-meta">
+            <p class="timeline-date">Feb 2025 - May 2025</p>
+            <div class="timeline-logo">
+              <img src="csforeach.jpeg" alt="CS foreach logo" />
+            </div>
+          </div>
+          <div class="timeline-content">
+            <h3>
+              <a
+                class="timeline-title-link"
+                href="https://github.com/tritonhacks/TritonHacks2025-ML-starter-kit"
+                target="_blank"
+                rel="noopener"
+              >
+                AI/ML Starter-Kit Developer
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 5h5v5h-2V8.41l-6.29 6.3-1.42-1.42L15.59 7H14V5ZM6 7h5v2H8v7h7v-3h2v5H6V7Z"/>
+                </svg>
+              </a>
+            </h3>
+            <p class="timeline-org">CS foreach</p>
+            <p class="timeline-summary">
+              Built reusable ML starter workflows for TritonHacks and supported workshops for 120+ students.
+            </p>
+            <p class="stack-line">Python · scikit-learn · Pandas · Seaborn</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-kicker">Projects</div>
+      <div class="section-heading-row">
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-top">
+            <h3>QuickMenu</h3>
+            <p>Command-palette extension for <strong>Python's IDLE (idlelib)</strong> legacy codebase built using <strong>data structure</strong> fundamentals.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <h3>
+              <a class="project-title-link" href="https://github.com/AshishBamba05/stocktrackr" target="_blank" rel="noopener">
+                StockWatch
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 5h5v5h-2V8.41l-6.29 6.3-1.42-1.42L15.59 7H14V5ZM6 7h5v2H8v7h7v-3h2v5H6V7Z"/>
+                </svg>
+              </a>
+            </h3>
+            <p>Real-time stock monitoring dashboard built with <strong>REST endpoints</strong> and <strong>WebSocket</strong> streaming.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <h3>
+              <a class="project-title-link" href="https://github.com/AshishBamba05/histbytz-app" target="_blank" rel="noopener">
+                Histora
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 5h5v5h-2V8.41l-6.29 6.3-1.42-1.42L15.59 7H14V5ZM6 7h5v2H8v7h7v-3h2v5H6V7Z"/>
+                </svg>
+              </a>
+            </h3>
+            <p>History search application built on the <strong>MERN stack</strong> with <strong>REST API</strong> request and response flow.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-top">
+            <h3>
+              <a class="project-title-link" href="https://github.com/CSE110-Coblenz/cse-110-project-team-39" target="_blank" rel="noopener">
+                NumberNova
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14 5h5v5h-2V8.41l-6.29 6.3-1.42-1.42L15.59 7H14V5ZM6 7h5v2H8v7h7v-3h2v5H6V7Z"/>
+                </svg>
+              </a>
+            </h3>
+            <p>Interactive math game built on maintainable <strong>MVC architecture</strong> in <strong>TypeScript</strong>.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <p class="section-kicker">Contact</p>
+      <div class="contact-card reveal">
+        <h2>Let’s keep it simple.</h2>
+        <p>If there is a role or team that feels like a fit, I would be glad to connect.</p>
+        <div class="contact-actions icon-links">
+          <a class="icon-link" href="mailto:ashishvbamba@gmail.com?subject=Recruiter%20Inquiry" aria-label="Email Ashish">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 5.75A2.75 2.75 0 0 1 5.75 3h12.5A2.75 2.75 0 0 1 21 5.75v12.5A2.75 2.75 0 0 1 18.25 21H5.75A2.75 2.75 0 0 1 3 18.25Zm2.2.25L12 11.14 18.8 6Zm13.8 1.55-6.55 4.96a.75.75 0 0 1-.9 0L5 7.55v10.7c0 .3.25.55.55.55h12.9c.3 0 .55-.25.55-.55Z"/>
+            </svg>
+          </a>
+          <a class="icon-link" href="https://www.linkedin.com/in/ashishbamba/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.94 8.5A1.56 1.56 0 1 0 6.93 5.4a1.56 1.56 0 0 0 .01 3.1ZM5.6 9.75h2.67v8.65H5.6zm4.35 0h2.55v1.18h.03c.35-.67 1.22-1.38 2.5-1.38 2.68 0 3.17 1.76 3.17 4.05v4.8h-2.66v-4.25c0-1.01-.02-2.32-1.42-2.32-1.42 0-1.64 1.1-1.64 2.24v4.33H9.95z"/>
+            </svg>
+          </a>
+          <a class="icon-link" href="https://github.com/AshishBamba05" target="_blank" rel="noopener" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.75-1.32-3.75-1.32-.5-1.28-1.24-1.62-1.24-1.62-1-.7.08-.69.08-.69 1.12.08 1.7 1.15 1.7 1.15.98 1.7 2.58 1.2 3.2.92.1-.72.39-1.2.7-1.48-2.47-.28-5.06-1.24-5.06-5.5 0-1.22.43-2.22 1.15-3-.12-.28-.5-1.43.1-2.98 0 0 .94-.3 3.08 1.14a10.7 10.7 0 0 1 5.6 0c2.13-1.44 3.07-1.14 3.07-1.14.6 1.55.22 2.7.11 2.98.72.78 1.15 1.78 1.15 3 0 4.27-2.6 5.21-5.08 5.49.4.35.74 1.02.74 2.05v3.04c0 .3.2.65.77.54A11.25 11.25 0 0 0 12 .75"/>
+            </svg>
+          </a>
         </div>
       </div>
-    </article>
-  </div>
-</section>
-
-<section id="course" class="section-title">
-
-
- <!-- ===== Relevant Coursework (Interactive) ===== -->
-<section id="course" class="section-title">
-  <h2>Relevant Coursework</h2>
-
-  <ul class="course-tags" role="list">
-    <!-- Programming / Core -->
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 11 — OOP & Java
-      </button>
-      <div class="course-detail" role="region">
-        • If-else statements, loops, conditionals, break statements <br>
-        • Classes/objects, inheritance, interfaces<br>
-        • Testing, exceptions, I/O
-      </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 12 — Data Structures
-      </button>
-      <div class="course-detail" role="region">
-        • Arrays/lists, stacks/queues, hash maps/sets<br>
-        • Trees, heaps, graphs & traversal<br>
-        • Asymptotic analysis; memory/layout implications
-      </div>
-    </li>
-
-    <!-- Systems / Tooling -->
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 30 — Systems Programming
-      </button>
-      <div class="course-detail" role="region">
-        • C, pointers, manual memory, bit ops<br>
-        • Debugging/profiling: gdb, valgrind
-      </div>
-    </li>
-
-      <li class="course">
-        <button class="course-pill" aria-expanded="false">
-          CSE 100 — Advanced Data Structures
-        </button>
-        <div class="course-detail" role="region">
-          • Balanced trees (AVL/Red-Black), union-find<br>
-          • Priority queues, range queries, amortized analysis<br>
-          • Graph shortest paths / MST patterns
-        </div>
-      </li>
-
-      <li class="course">
-        <button class="course-pill" aria-expanded="false">
-          CSE 101 — Design and Analysis of Algorithms
-        </button>
-        <div class="course-detail" role="region">
-          • Nonnumerical algorithms, graph and network algorithms<br>
-          • Measuring complexity of algorithms, time and storage. NP-complete problems<br>
-        </div>
-     </li>
-
-    <!-- Theory / Math -->
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 105 — Theory of Computation
-      </button>
-      <div class="course-detail" role="region">
-        • DFAs/NFAs/regular languages; CFGs/PDAs<br>
-        • Decidability, reductions, Turing Machines<br>
-        • NP v. P, NP-complete, NP-hard
-      </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 110 — Software Engineering
-      </button>
-      <div class="course-detail" role="region">
-        • JavaScript, TypeScript, SQL<br>
-        • Specification, design, implementation, testing, and process<br>
-      </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 152A – Computer Vision
-      </button>
-      <div class="course-detail" role="region">
-        • Image formation, camera models, geometric transformations<br>
-        • Feature detection, matching, and motion estimation<br>
-        • Convolution, filtering, and deep learning for vision tasks
-      </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 167 — Graphic Design
-      </button>
-      <div class="course-detail" role="region">
-        • Two-dimensional and three-dimensional transformations, curves, surfaces<br>
-        • Raster and vector graphic I/O devices; retained-mode and immediate-mode graphics software systems and applicationss<br>
-        • Projection, illumination, and shading models
-      </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        CSE 190 – Managing Large Codebases
-      </button>
-      <div class="course-detail" role="region">
-        • Navigating, comprehending, and extending large codebases<br>
-        • Debugging, testing, and design decisions in collaborative systems
-    </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        MATH 109 — Mathematical Reasoning
-      </button>
-      <div class="course-detail" role="region">
-        • Proof techniques (direct, contradiction, induction)<br>
-        • Sets, functions, relations<br>
-        • Rigorous problem decomposition
-      </div>
-    </li>
-
-    <li class="course">
-      <button class="course-pill" aria-expanded="false">
-        MATH 154 — Discrete Math & Graph Theory
-      </button>
-      <div class="course-detail" role="region">
-        • Graphs, connectivity, matching, coloring<br>
-        • Counting, recurrences, generating functions<br>
-        • Max-Flow Min-Cut, shortest paths
-      </div>
-    </li>
-  </ul>
-</section>
-
-
-<section id="skills" class="section-title">
-  <h2>Skills</h2>
-
-  <div class="skills-filter" id="skillsFilter">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="swe">SWE</button>
-    <button class="filter-btn" data-filter="ml">AI/ML</button>
-    <span class="filter-indicator" aria-hidden="true"></span>
-  </div>
-
-  <div class="skills-simple">
-    <section class="skill-card-simple">
-      <h3>Programming Languages</h3>
-      <ul class="skill-grid">
-        <li class="badge" data-tags="swe ml">Python</li>
-        <li class="badge" data-tags="swe">Java</li>
-        <li class="badge" data-tags="swe">JavaScript</li>
-        <li class="badge" data-tags="swe">TypeScript</li>
-        <li class="badge" data-tags="swe">C/C++</li>
-        <li class="badge" data-tags="swe">SQL</li>
-        <li class="badge" data-tags="swe">HTML/CSS</li>
-      </ul>
     </section>
+  </main>
 
-    <section class="skill-card-simple">
-      <h3>Frameworks & Libraries</h3>
-      <ul class="skill-grid">
-        <li class="badge" data-tags="swe">React.js</li>
-        <li class="badge" data-tags="swe">Node.js</li>
-        <li class="badge" data-tags="swe">Express.js</li>
-        <li class="badge" data-tags="swe">Konva.js</li>
-        <li class="badge" data-tags="ml">PyTorch</li>
-        <li class="badge" data-tags="ml">scikit-learn</li>
-        <li class="badge" data-tags="ml">Pandas</li>
-        <li class="badge" data-tags="ml">NumPy</li>
-        <li class="badge" data-tags="ml">Matplotlib</li>
-        <li class="badge" data-tags="ml">Seaborn</li>
-      </ul>
-    </section>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Ashish V. Bamba</p>
+    <p>Designed and built with HTML, CSS, and JavaScript.</p>
+  </footer>
 
-    <section class="skill-card-simple">
-      <h3>Cloud & DevOps</h3>
-      <ul class="skill-grid">
-        <li class="badge" data-tags="swe ml">Google Cloud Platform (GCP)</li>
-        <li class="badge" data-tags="swe ml">Docker</li>
-        <li class="badge" data-tags="swe ml">Kubernetes</li>
-        <li class="badge" data-tags="ml swe">GitHub Actions (CI/CD)</li>
-        <li class="badge" data-tags="ml swe">Heroku</li>
-      </ul>
-    </section>
-
-    <section class="skill-card-simple">
-      <h3>Tools & Datastores</h3>
-      <ul class="skill-grid">
-        <li class="badge" data-tags="swe ml">Codex</li>
-        <li class="badge" data-tags="swe ml">Claude</li>
-        <li class="badge" data-tags="swe ml">GitHub Copilot</li>
-        <li class="badge" data-tags="swe ml">PostgreSQL (Supabase)</li>
-        <li class="badge" data-tags="swe ml">MySQL</li>
-        <li class="badge" data-tags="ml swe">MS-SQL</li>
-        <li class="badge" data-tags="ml swe">MongoDB (Mongoose)</li>
-        <li class="badge" data-tags="ml swe">NoSQL</li>
-        <li class="badge" data-tags="swe ml">Git</li>
-        <li class="badge" data-tags="swe ml">VS Code</li>
-      </ul>
-    </section>
-  </div>
-</section>
-
-
-
-  <section id="projects" class="section-title">
-    <h2>Projects</h2>
-
-    <div class="projects-grid">
-
-    
-      <div class="project-card">
-      <span class="accent"></span>
-  <div class="card-top">
-    <h3>QuickMenu - Idlelib Extension</h3>
-    <div class="tags">
-      <span>Python</span><span>C++</span><span>Large Codebases</span>
-    </div>
-  </div>
-  <div class="project-desc">
-  <p>
-    Real-time stock monitoring dashboard powered by REST endpoints + WebSocket streaming
-  </p>
-  </div>
-
-  <div class="card-footer no-logo">
-    <a class="btn" href="https://github.com/AshishBamba05/stocktrackr">View Repo</a>
-  </div>
-</div>
-
-
-      <div class="project-card">
-      <span class="accent"></span>
-  <div class="card-top">
-    <h3>StockTrackr</h3>
-    <div class="tags">
-      <span>TypeScript</span><span>Express.js</span><span>PostgreSQL</span><span>WebSockets</span><span>REST API</span>
-    </div>
-  </div>
-  <div class="project-desc">
-  <p>
-    Real-time stock monitoring dashboard powered by REST endpoints + WebSocket streaming
-  </p>
-  </div>
-
-  <div class="card-footer no-logo">
-    <a class="btn" href="https://github.com/AshishBamba05/stocktrackr">View Repo</a>
-  </div>
-</div>
-
-<div class="project-card">
-   <span class="accent"></span>
-  <div class="card-top">
-    <h3>HistBytz</h3>
-    <div class="tags">
-      <span>React</span><span>Node</span><span>Express</span><span>REST API</span><span>MongoDB</span>
-    </div>
-  </div>
-<div class="project-desc">
-  <p>
-    A search application for exploring historical events, querying a MongoDB dataset of 65+ events.
-    Powered by React frontend and Express backend with REST endpoints for search, filtering, and input validation
-  </p>
-  </div>
-
-  <div class="card-footer no-logo">
-    <a class="btn" href="https://github.com/AshishBamba05/histbytz-app">View Repo</a>
-    <!-- Optional:
-    <a class="btn secondary" href="...">Live Demo</a>
-    -->
-  </div>
-</div>
-
-
-      <div class="project-card">
-  <div class="card-content">
-    <h3>NumberNova</h3>
-     <span class="accent"></span>
-    <div class="tags">
-      <span>TypeScript</span>
-      <span>Konva</span>
-      <span>PostgreSQL</span>
-      <span>Model-View-Controller</span>
-    </div>
-    <div class="project-desc">
-    <p>
-      Interactive Math Game following the Model-View-Controller (MVC) architecture design, coded in TypeScript, powered by Konva.js and PostgreSQL
-    </p>
-    </div>
-  </div>
-
-  <div class="card-footer">
-    <a class="btn" href="https://github.com/CSE110-Coblenz/cse-110-project-team-39">View Repo</a>
-  </div>
-</div>
-
-    </div>
-  </section>
-
-  <section id="contact-cta" class="cta-wrap">
-  <div class="cta-card">
-    <div class="cta-card">
-    <p class="cta-typed cta-heading">Let's connect and code!</p>
-    <p class="cta-typed">Always excited to take on fresh opportunities. Feel free to reach out!
-
-      <br>- Ashish Bamba </br>
-    </p>
-    </div>
-
-    <!-- Option A: mailto -->
-    <a class="cta-btn"
-       href="mailto:ashishvbamba@gmail.com?subject=Inquiry%20from%20your%20portfolio">
-      <span class="icon">✉️</span>
-      Get in Touch
-    </a>
-
-    <!-- Option B: route to /contact
-    <a class="cta-btn" href="#contact"> <span class="icon">✉️</span> Get in Touch </a>
-    -->
-  </div>
-</section>
-
- <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
-<footer class="site-footer">
-  <div class="footer-inner">
-    <span>© 2025 Ashish V Bamba</span>
-    <span class="sep">|</span>
-    <span>Built with JavaScript, Custom CSS, and HTML</span>
-    <span class="sep">|</span>
-    <a href="https://github.com/AshishBamba05/Portfolio" target="_blank" rel="noopener"> View on GitHub</a>
-  </div>
-</footer>
-
 </html>
