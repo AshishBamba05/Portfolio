@@ -6,9 +6,9 @@ const themeMenu = document.getElementById("themeMenu");
 const themeOptions = [...document.querySelectorAll(".theme-option")];
 
 const themeLabels = {
-  auto: "Auto",
-  midnight: "Midnight",
-  slate: "Slate",
+  auto: "Auto (Cyber)",
+  terminal: "Terminal",
+  lagoon: "Lagoon",
   sand: "Sand",
   forest: "Forest",
 };
