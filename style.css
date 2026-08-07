@@ -260,7 +260,8 @@ body {
 }
 
 body[data-theme="auto"],
-body[data-theme="matrix"] {
+body[data-theme="matrix"],
+body[data-theme="nebula"] {
   background-attachment: fixed, scroll;
 }
 
