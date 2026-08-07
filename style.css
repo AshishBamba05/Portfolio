@@ -63,7 +63,7 @@ body[data-theme="lagoon"] {
   --theme-option-hover: rgba(20, 152, 229, 0.1);
 }
 
-body[data-theme="terminal"] {
+body[data-theme="matrix"] {
   --bg: #020803;
   --bg-soft: #06110a;
   --surface: rgba(10, 26, 15, 0.72);
@@ -177,7 +177,7 @@ body {
 }
 
 body[data-theme="auto"],
-body[data-theme="terminal"] {
+body[data-theme="matrix"] {
   background-attachment: fixed, scroll;
 }
 

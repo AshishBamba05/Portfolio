@@ -7,7 +7,7 @@ const themeOptions = [...document.querySelectorAll(".theme-option")];
 
 const themeLabels = {
   auto: "Auto (Cyber)",
-  terminal: "Terminal",
+  matrix: "Matrix",
   lagoon: "Lagoon",
   sand: "Sand",
   forest: "Forest",
