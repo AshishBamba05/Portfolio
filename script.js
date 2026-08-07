@@ -6,8 +6,9 @@ const themeMenu = document.getElementById("themeMenu");
 const themeOptions = [...document.querySelectorAll(".theme-option")];
 
 const themeLabels = {
-  auto: "Auto (Cyber)",
+  auto: "Cyber",
   matrix: "Matrix",
+  nebula: "Nebula",
   lagoon: "Lagoon",
   sand: "Sand",
   forest: "Forest",
@@ -193,4 +194,57 @@ if ("IntersectionObserver" in window && revealNodes.length > 0) {
   revealNodes.forEach((node) => revealObserver.observe(node));
 } else {
   revealNodes.forEach((node) => node.classList.add("is-visible"));
+}
+
+const customCursor = document.getElementById("customCursor");
+const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+const prefersReducedMotionForCursor = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (customCursor && hasFinePointer && !prefersReducedMotionForCursor) {
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+
+  window.addEventListener("mousemove", (event) => {
+    targetX = event.clientX;
+    targetY = event.clientY;
+    customCursor.classList.add("is-visible");
+  });
+
+  document.addEventListener("mouseleave", () => {
+    customCursor.classList.remove("is-visible");
+  });
+
+  const cursorInteractiveSelector = "a, button, .theme-option, .icon-link";
+
+  document.addEventListener("mouseover", (event) => {
+    if (event.target.closest(cursorInteractiveSelector)) {
+      customCursor.classList.add("is-active");
+    }
+  });
+
+  document.addEventListener("mouseout", (event) => {
+    if (event.target.closest(cursorInteractiveSelector)) {
+      customCursor.classList.remove("is-active");
+    }
+  });
+
+  window.addEventListener("mousedown", () => {
+    customCursor.classList.add("is-clicking");
+  });
+
+  window.addEventListener("mouseup", () => {
+    customCursor.classList.remove("is-clicking");
+  });
+
+  function renderCustomCursor() {
+    currentX += (targetX - currentX) * 0.18;
+    currentY += (targetY - currentY) * 0.18;
+    customCursor.style.left = `${currentX}px`;
+    customCursor.style.top = `${currentY}px`;
+    requestAnimationFrame(renderCustomCursor);
+  }
+
+  requestAnimationFrame(renderCustomCursor);
 }

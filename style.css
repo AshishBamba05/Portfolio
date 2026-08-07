@@ -94,6 +94,37 @@ body[data-theme="matrix"] {
   --theme-option-hover: rgba(0, 255, 127, 0.12);
 }
 
+body[data-theme="nebula"] {
+  --bg: #0a0612;
+  --bg-soft: #120a1e;
+  --surface: rgba(24, 16, 40, 0.72);
+  --surface-strong: rgba(30, 20, 48, 0.88);
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.9);
+  --line: rgba(168, 85, 247, 0.18);
+  --accent: #a855f7;
+  --accent-soft: rgba(168, 85, 247, 0.14);
+  --highlight: #c4b5fd;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  --header-bg: rgba(10, 6, 18, 0.6);
+  --header-border: rgba(168, 85, 247, 0.18);
+  --header-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  --button-secondary-bg: rgba(168, 85, 247, 0.08);
+  --button-secondary-border: rgba(168, 85, 247, 0.28);
+  --theme-toggle-bg: rgba(14, 9, 22, 0.92);
+  --theme-toggle-text: #a855f7;
+  --theme-toggle-border: rgba(168, 85, 247, 0.5);
+  --theme-toggle-hover: rgba(20, 13, 30, 0.98);
+  --button-primary-shadow: 0 0 32px rgba(168, 85, 247, 0.35);
+  --button-primary-text: #1a0f2a;
+  --hero-glow: rgba(168, 85, 247, 0.12);
+  --floating-toggle-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+  --theme-menu-bg: rgba(10, 7, 16, 0.95);
+  --theme-menu-border: rgba(168, 85, 247, 0.22);
+  --theme-option-text: var(--text);
+  --theme-option-hover: rgba(168, 85, 247, 0.12);
+}
+
 body[data-theme="sand"] {
   --bg: #e7cf9a;
   --bg-soft: #f9f3e8;
@@ -174,6 +205,58 @@ body {
     linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
   line-height: 1.55;
   transition: background 220ms ease, color 220ms ease;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition:
+    opacity 200ms ease,
+    width 220ms ease,
+    height 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.custom-cursor.is-visible {
+  opacity: 1;
+}
+
+.custom-cursor.is-active {
+  width: 46px;
+  height: 46px;
+  background: var(--accent-soft);
+}
+
+.custom-cursor.is-clicking {
+  background: var(--accent);
+}
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    display: none;
+  }
 }
 
 body[data-theme="auto"],
