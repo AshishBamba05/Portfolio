@@ -32,7 +32,7 @@
   --radius-md: 20px;
 }
 
-body[data-theme="lagoon"] {
+body[data-theme="aqua"] {
   --bg: #93e5f5;
   --bg-soft: #eefbff;
   --surface: rgba(255, 255, 255, 0.62);

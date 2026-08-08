@@ -9,7 +9,7 @@ const themeLabels = {
   auto: "Cyber",
   matrix: "Matrix",
   nebula: "Nebula",
-  lagoon: "Lagoon",
+  aqua: "Aqua",
   sand: "Sand",
   forest: "Forest",
 };
@@ -239,8 +239,8 @@ if (customCursor && hasFinePointer && !prefersReducedMotionForCursor) {
   });
 
   function renderCustomCursor() {
-    currentX += (targetX - currentX) * 0.18;
-    currentY += (targetY - currentY) * 0.18;
+    currentX += (targetX - currentX) * 0.85;
+    currentY += (targetY - currentY) * 0.85;
     customCursor.style.left = `${currentX}px`;
     customCursor.style.top = `${currentY}px`;
     requestAnimationFrame(renderCustomCursor);
